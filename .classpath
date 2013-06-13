@@ -6,5 +6,6 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="Project_Forest_Problem/Program/src/mvc.jar"/>
 	<classpathentry kind="output" path="Project_Forest_Problem/Program/bin"/>
 </classpath>
