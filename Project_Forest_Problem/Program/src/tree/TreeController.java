@@ -4,13 +4,17 @@ import java.awt.Point;
 import java.awt.event.MouseEvent;
 
 public class TreeController extends mvc.Controller {
+	
+	protected TreeModel aTreeModel;
+	
+	protected TreeView aTreeView;
 
 		public TreeController()
 		{
 			super();
 		}
 		
-		// ƒNƒŠƒbƒN‚µ‚½ˆÊ’uÀ•W‚ğLeaf‚É‘—M‚·‚é(ˆÀ“c)
+		// ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½Ê’uï¿½ï¿½ï¿½Wï¿½ï¿½Leafï¿½É‘ï¿½ï¿½Mï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½c)
 		public void mouseClicked(MouseEvent aMouseEvent)
 		{
 			Point aPoint = aMouseEvent.getPoint();
