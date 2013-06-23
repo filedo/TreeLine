@@ -6,6 +6,7 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="Project_Forest_Problem/Program/src/mvc.jar"/>
 	<classpathentry kind="output" path="Project_Forest_Problem/Program/bin"/>
 </classpath>

@@ -1,4 +1,4 @@
-package tree;
+﻿package tree;
 
 import java.awt.Point;
 import java.awt.event.MouseEvent;
@@ -14,7 +14,7 @@ public class TreeController extends mvc.Controller {
 			super();
 		}
 		
-		// �N���b�N�����ʒu���W��Leaf�ɑ��M����(���c)
+		// ?N???b?N??????u???W??Leaf????M????(???c)
 		public void mouseClicked(MouseEvent aMouseEvent)
 		{
 			Point aPoint = aMouseEvent.getPoint();
