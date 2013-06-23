@@ -5,8 +5,14 @@ import java.awt.event.MouseEvent;
 
 public class TreeController extends mvc.Controller {
 	
+	/**
+	 * TreeModelを束縛する。
+	 */
 	protected TreeModel aTreeModel;
 	
+	/**
+	 * TreeViewを束縛する。
+	 */
 	protected TreeView aTreeView;
 
 		public TreeController()
