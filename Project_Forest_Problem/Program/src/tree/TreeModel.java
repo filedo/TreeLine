@@ -1,4 +1,4 @@
-﻿package tree;
+package tree;
 
 public class TreeModel extends mvc.Model{
 	/**

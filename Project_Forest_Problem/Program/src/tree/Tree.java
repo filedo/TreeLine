@@ -1,4 +1,4 @@
-﻿package tree;
+package tree;
 
 import java.awt.Point;
 import java.util.ArrayList;
