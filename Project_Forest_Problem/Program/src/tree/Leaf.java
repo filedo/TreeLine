@@ -7,6 +7,10 @@ public class Leaf {
 	 */
 	private String nodeName;
 
+	public Leaf()
+	{
+	
+	}
 	/**
 	 * ノードの名前を応答する。
 	 * @return

@@ -16,7 +16,7 @@ public class Tree {
 	
 	public Tree()
 	{
-		return;
+		
 	}
 	/**
 	 * 樹上整列の座標を求める。

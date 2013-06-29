@@ -10,6 +10,11 @@ public class TreeView extends mvc.View{
 	 */
 	protected TreeController aTreeController;
 	
+	public TreeView(TreeModel aTreeModel)
+	{
+		super(aTreeModel);
+	}
+	
 	public TreeView(TreeModel aTreeModel,TreeController aTreeController)
 	{		
 		super(aTreeModel,aTreeController);
