@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.TreeMap;
 
 public class TreeModel extends mvc.Model{
 	/**
@@ -28,6 +29,7 @@ public class TreeModel extends mvc.Model{
 		aTree=new Tree();
 		aLeaf=new Leaf();
 		aLeaf.setNodeName("test");
+		//load();
 	}
 
 	public void perform()
@@ -67,9 +69,11 @@ public class TreeModel extends mvc.Model{
 		return aLeaf;
 	}
 	
-	public ArrayList<Leaf> load()
+	public void load()
 	{
-	String inFileName = "../../Requirement/texts/tree.txt";	 // 入力ファイル名
+	/*ちゃんと読み込めていない
+	  
+	 String inFileName = "tree.txt";	 // 入力ファイル名
 
 		try {
 			FileInputStream fis = new FileInputStream(inFileName);
@@ -77,8 +81,24 @@ public class TreeModel extends mvc.Model{
 			BufferedReader br = new BufferedReader(isr);
 
 	String line;
-
-			
+	TreeMap<Integer,String> aTreeMap = new TreeMap<Integer,String>();
+	while((line=br.readLine()) != null) 
+	{
+		if(line.equals("nodes"))
+		{
+		// 1行の中の改行文字を全て削除し、タブで分割
+		String[] item = line.replaceAll("\n", "").replaceAll(",","").split("\t");
+		// 分割結果の0番目は画像ファイル名, 1番目は人数(Integerに変換)
+		Integer key = Integer.valueOf(item[0]);
+		String nodeName  = item[1];
+		// keyが初めて出てきたキーならば、ArrayListを初期化してTreeMapの値として追加
+		if(!aTreeMap.containsKey(key))
+			{
+			aTreeMap.put(key, nodeName);
+		}
+		}
+	}
+			System.out.println(aTreeMap.get(1));
 			br.close();
 			isr.close();
 			fis.close();
@@ -89,7 +109,7 @@ public class TreeModel extends mvc.Model{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return null;
-		
+		return;
+		*/
 	}
 }
