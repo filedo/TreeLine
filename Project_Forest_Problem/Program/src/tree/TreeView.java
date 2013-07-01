@@ -18,6 +18,9 @@ public class TreeView extends mvc.View{
 	public TreeView(TreeModel aTreeModel,TreeController aTreeController)
 	{		
 		super(aTreeModel,aTreeController);
-		
+		this.aTreeModel=aTreeModel;
+		this.aTreeController=aTreeController;
+		this.aTreeController.setView(this);
+		this.aTreeController.setModel(aTreeModel);
 	}
 }

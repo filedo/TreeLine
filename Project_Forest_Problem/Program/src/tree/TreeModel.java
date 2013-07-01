@@ -25,6 +25,9 @@ public class TreeModel extends mvc.Model{
 	public TreeModel()
 	{
 		super();
+		aTree=new Tree();
+		aLeaf=new Leaf();
+		aLeaf.setNodeName("test");
 	}
 
 	public void perform()
@@ -66,12 +69,14 @@ public class TreeModel extends mvc.Model{
 	
 	public ArrayList<Leaf> load()
 	{
-	/*	String inFileName = "../../Requirement/texts/tree.txt";	 // 入力ファイル名
+	String inFileName = "../../Requirement/texts/tree.txt";	 // 入力ファイル名
 
 		try {
 			FileInputStream fis = new FileInputStream(inFileName);
 			InputStreamReader isr = new InputStreamReader(fis , "UTF-8");
 			BufferedReader br = new BufferedReader(isr);
+
+	String line;
 
 			
 			br.close();
@@ -83,7 +88,7 @@ public class TreeModel extends mvc.Model{
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}*/
+		}
 		return null;
 		
 	}

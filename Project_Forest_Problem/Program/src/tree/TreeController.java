@@ -18,6 +18,8 @@ public class TreeController extends mvc.Controller {
 		public TreeController()
 		{
 			super();
+			aTreeModel=null;
+			aTreeView=null;
 		}
 		
 		/**
@@ -29,7 +31,8 @@ public class TreeController extends mvc.Controller {
 			Point aPoint = aMouseEvent.getPoint();
 			aPoint.translate(view.scrollAmount().x, view.scrollAmount().y);
 			System.out.println(aPoint);
-			//System.out.println(aTreeModel.getLeaf().getNodeName());
+			System.out.println(aTreeModel.getLeaf().getNodeName());
+			
 			return;
 		}
 
@@ -37,5 +40,10 @@ public class TreeController extends mvc.Controller {
 		{
 			return;
 		}
-		
+		public void setModel(TreeModel aTreeModel){
+			this.aTreeModel = aTreeModel;
+		}
+		public void setView(TreeView aTreeView){
+			this.aTreeView = aTreeView;
+		}
 }
