@@ -31,7 +31,7 @@ public class TreeController extends mvc.Controller {
 			Point aPoint = aMouseEvent.getPoint();
 			aPoint.translate(view.scrollAmount().x, view.scrollAmount().y);
 			System.out.println(aPoint);
-			System.out.println(aTreeModel.getLeaf().getNodeName());
+			System.out.println(aTreeModel.getTree().getLeaf().getNodeName());
 			
 			return;
 		}
@@ -40,10 +40,20 @@ public class TreeController extends mvc.Controller {
 		{
 			return;
 		}
+		/**
+		 *  指定されたモデルをインスタンス変数aTreeModelに設定する。
+		 * @param aTreeModel
+		 */
 		public void setModel(TreeModel aTreeModel){
 			this.aTreeModel = aTreeModel;
+            return;
 		}
+		/**
+		 *  指定されたビューをインスタンス変数aTreeViewに設定する。
+		 * @param aTreeView
+		 */
 		public void setView(TreeView aTreeView){
 			this.aTreeView = aTreeView;
+            return;
 		}
 }

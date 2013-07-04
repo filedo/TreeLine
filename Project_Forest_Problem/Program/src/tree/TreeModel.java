@@ -19,17 +19,11 @@ public class TreeModel extends mvc.Model{
      * 木を束縛する。
      */
     private Tree aTree;
-    /**
-     * 葉を束縛する。
-     */
-    private Leaf aLeaf;
-	
+    
     public TreeModel()
     {
 	super();
 	aTree=new Tree();
-	aLeaf=new Leaf();
-	aLeaf.setNodeName("test");
 	load();
     }
     
@@ -54,6 +48,7 @@ public class TreeModel extends mvc.Model{
     public void setMode(int mode) 
     {
 	this.mode = mode;
+        return;
     }
     /**
      * 木を応答する。
@@ -61,17 +56,12 @@ public class TreeModel extends mvc.Model{
      */
     public Tree getTree()
     {
-	return aTree;
-    }
-    /**
-     * 葉を応答する。
-     * @return
-     */
-    public Leaf getLeaf()
-    {
-	return aLeaf;
+	return this.aTree;
     }
     
+    /**
+     * ファイルを読み込む。
+     */
     public void load()
     {
 	String inFileName = "tree.txt";	 // 入力ファイル名
@@ -102,55 +92,57 @@ public class TreeModel extends mvc.Model{
 			    line=br.readLine();
 			}
 		    if(nodes)
-		    {
-			// 1行の中の改行文字を全て削除し、,で分割
-			String[] item = line.replaceAll("¥n", "").split(",");
-			// 分割結果の0番目はキー, 1番目はノードの名前
-			Integer key = Integer.valueOf(item[0]);
-			String nodeName  = item[1];
-			// keyが初めて出てきたキーならば、TreeMapの値として追加
-			if(!nodesMap.containsKey(key))
-			    {
-				nodesMap.put(key, nodeName);
-			    }
-		    }
-		/* if(branches)
-		    {
-		    	String[] item = line.replaceAll("¥n","").split(",");
-		    	Integer from = Integer.valueOf(item[0]);
-		    	Integer to = Integer.valueOf(item[1]);
-		    	if(!branchesMap.containsKey(from))
-		    	{
-		    		branchesMap.put(from,new ArrayList<Integer>());
-		    	}
-		    	branchesMap.get(from).add(to);
-		    }*/
+			{
+			    // 1行の中の改行文字を全て削除し、,で分割
+			    String[] item = line.replaceAll("¥n", "").split(",");
+			    // 分割結果の0番目はキー, 1番目はノードの名前
+			    Integer key = Integer.valueOf(item[0]);
+			    String nodeName  = item[1];
+			    // keyが初めて出てきたキーならば、TreeMapの値として追加
+			    if(!nodesMap.containsKey(key))
+				{
+				    nodesMap.put(key, nodeName);
+				}
+			}
+		    /* if(branches)
+		       {
+		       String[] item = line.replaceAll("¥n","").split(",");
+		       Integer from = Integer.valueOf(item[0]);
+		       Integer to = Integer.valueOf(item[1]);
+		       if(!branchesMap.containsKey(from))
+		       {
+		       branchesMap.put(from,new ArrayList<Integer>());
+		       }
+		       branchesMap.get(from).add(to);
+		       }*/
 		}
 	    for ( Integer key : nodesMap.keySet() )
-	    {
-	    	String nodeName = nodesMap.get( key );
-	    	aLeaf.setNodeName(nodeName);
-	    	aTree.setLeafList(aLeaf);
-	    	System.out.println(aTree.getLeafList().size());
-	    	System.out.println( key + ": " +  nodeName );
-	    }
-	    
+		{
+		    Leaf aLeaf=new Leaf();
+		    aTree.setLeaf(aLeaf);
+		    String nodeName = nodesMap.get( key );
+		    aTree.getLeaf().setNodeName(nodeName);
+		    aTree.getLeaf().setNodeNumber(key);
+		    aTree.addLeafList(aLeaf);
+		}
+	    //  System.out.println(aTree.getLeafList().get(4).getNodeNumber()+":"+aTree.getLeafList().get(4).getNodeName());
 	    
 	    br.close();
 	    isr.close();
 	    fis.close();
-		}
-	    catch (FileNotFoundException e) 
-	{
-	    e.printStackTrace();
-	} catch (UnsupportedEncodingException e) 
-	{
-	    e.printStackTrace();
-	} 
-	catch (IOException e) 
-	{
-	    e.printStackTrace();
 	}
+	catch (FileNotFoundException e) 
+	    {
+		e.printStackTrace();
+	    } catch (UnsupportedEncodingException e) 
+	    {
+		e.printStackTrace();
+	    } 
+	catch (IOException e) 
+	    {
+		e.printStackTrace();
+	    }
 	return;		
     }
 }
+
