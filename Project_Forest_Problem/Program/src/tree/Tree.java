@@ -16,7 +16,7 @@ public class Tree {
 	
 	public Tree()
 	{
-		
+		aLeafList = new ArrayList<Leaf>();		
 	}
 	/**
 	 * 樹上整列の座標を求める。
@@ -25,5 +25,14 @@ public class Tree {
 	public Point treeDesign()
 	{
 		return aPoint;
+	}
+	
+	public void setLeafList(Leaf aLeaf)
+	{
+		aLeafList.add(aLeaf);
+	}
+	public ArrayList<Leaf> getLeafList()
+	{
+		return aLeafList;
 	}
 }
