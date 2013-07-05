@@ -1,6 +1,7 @@
 package tree;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -9,6 +10,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.TreeMap;
+import java.util.concurrent.CountDownLatch;
 
 public class TreeModel extends mvc.Model{
     /**
@@ -64,33 +66,68 @@ public class TreeModel extends mvc.Model{
      */
     public void load()
     {
-	String inFileName = "tree.txt";	 // 入力ファイル名
+    //カレントディレクトリを取得 テスト用
+    File currentDirectory = new File(".");
+    System.out.println(currentDirectory.getAbsolutePath());
+    
+	String inFileName = "Project_Forest_Problem/Requirement/texts/tree.txt";	 // 入力ファイル名
 	
 	try {
 	    FileInputStream fis = new FileInputStream(inFileName);
 	    InputStreamReader isr = new InputStreamReader(fis , "UTF-8");
 	    BufferedReader br = new BufferedReader(isr);
-	    
+
 	    String line;
 	    boolean nodes = false;
 	    boolean branches = false;
+	    boolean tree = false;
 	    TreeMap<Integer,String> nodesMap = new TreeMap<Integer,String>();
 	    TreeMap<Integer,ArrayList<Integer>> branchesMap = new TreeMap<Integer,ArrayList<Integer>>();
 	    
 	    while((line=br.readLine()) != null) 
 		{
+	    	if(line.equals("trees:"))
+	    	{
+	    		branches = false;
+	    		nodes = false;
+	    		tree = true;
+	    		line=br.readLine();
+	    	}
 		    if(line.equals("nodes:"))
 			{
-			    nodes = true;
 			    branches = false;
+			    nodes = true;
+			    tree = false;
 			    line=br.readLine();
 			}
 		    if(line.equals("branches:"))
 			{
-			    nodes = false;
 			    branches = true;
+			    nodes = false;
+			    tree = false;
 			    line=br.readLine();
 			}
+		    if(tree)
+		    {
+		    	int treedepth = 0;
+		    	String nodename;
+		    	
+		    	// 一行の中の改行文字を全て削除し、"|--"で分割
+		    	String[] item = line.replaceAll("\n","").split("\\|-- ");
+		    	
+		    	if (item.length == 1) {
+		    		// 深さ0のとき
+		    		treedepth = 0;
+					nodename = item[0];
+				}else{
+					// 深さ0以外のとき
+					// 深さ = 分割後の配列の長さ - 1
+					treedepth = item.length - 1;
+					nodename = item[item.length - 1];
+				}
+				// System.out.println(nodename + ": " + treedepth);
+			}
+		    
 		    if(nodes)
 			{
 			    // 1行の中の改行文字を全て削除し、,で分割
