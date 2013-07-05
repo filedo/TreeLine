@@ -10,11 +10,16 @@ public class Leaf {
      * ノードの番号を束縛する。
      */
     private Integer nodeNumber;
+    /**
+     * ノードの深さを束縛する。
+     */
+    private Integer nodeDepth;
     
     public Leaf()
     {
-        this.nodeNumber=null;
+        this.nodeNumber=0;
         this.nodeName=null;
+        this.nodeDepth=0;
     }
     /**
      * ノードの名前を応答する。
@@ -46,5 +51,20 @@ public class Leaf {
     public void setNodeNumber(Integer nodeNumber) {
 	this.nodeNumber = nodeNumber;
         return;
-    }   
+    }
+    /**
+     * ノードの深さを応答する。
+     * @return
+     */
+	public Integer getNodeDepth() {
+		return nodeDepth;
+	}
+	/**
+	 * ノードの深さを設定する。
+	 * @param nodeDepth
+	 */
+	public void setNodeDepth(Integer nodeDepth) {
+		this.nodeDepth = nodeDepth;
+		return;
+	}   
 }

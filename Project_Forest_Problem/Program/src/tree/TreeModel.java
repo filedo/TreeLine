@@ -83,7 +83,8 @@ public class TreeModel extends mvc.Model{
 	    boolean tree = false;
 	    TreeMap<Integer,String> nodesMap = new TreeMap<Integer,String>();
 	    TreeMap<Integer,ArrayList<Integer>> branchesMap = new TreeMap<Integer,ArrayList<Integer>>();
-	    
+	    ArrayList<Integer> nodeDepthList = new ArrayList<Integer>();
+
 	    while((line=br.readLine()) != null) 
 		{
 	    	if(line.equals("trees:"))
@@ -109,23 +110,24 @@ public class TreeModel extends mvc.Model{
 			}
 		    if(tree)
 		    {
-		    	int treedepth = 0;
-		    	String nodename;
+		    	Integer nodeDepth = 0;
+		    	String nodeName;
 		    	
 		    	// 一行の中の改行文字を全て削除し、"|--"で分割
 		    	String[] item = line.replaceAll("\n","").split("\\|-- ");
-		    	
 		    	if (item.length == 1) {
 		    		// 深さ0のとき
-		    		treedepth = 0;
-					nodename = item[0];
+		    		nodeDepth = 0;
+					nodeName = item[0];
+					nodeDepthList.add(nodeDepth);
 				}else{
 					// 深さ0以外のとき
 					// 深さ = 分割後の配列の長さ - 1
-					treedepth = item.length - 1;
-					nodename = item[item.length - 1];
+					nodeDepth = item.length - 1;
+					nodeName = item[item.length - 1];
+					nodeDepthList.add(nodeDepth);
 				}
-				// System.out.println(nodename + ": " + treedepth);
+		//		System.out.println(nodeDepthList.size());
 			}
 		    
 		    if(nodes)
@@ -141,7 +143,7 @@ public class TreeModel extends mvc.Model{
 				    nodesMap.put(key, nodeName);
 				}
 			}
-		    /* if(branches)
+		  /*  if(branches)
 		       {
 		       String[] item = line.replaceAll("¥n","").split(",");
 		       Integer from = Integer.valueOf(item[0]);
@@ -158,11 +160,13 @@ public class TreeModel extends mvc.Model{
 		    Leaf aLeaf=new Leaf();
 		    aTree.setLeaf(aLeaf);
 		    String nodeName = nodesMap.get( key );
+		    Integer nodeDepth = nodeDepthList.get(key-1);
 		    aTree.getLeaf().setNodeName(nodeName);
 		    aTree.getLeaf().setNodeNumber(key);
+		    aTree.getLeaf().setNodeDepth(nodeDepth); 
 		    aTree.addLeafList(aLeaf);
 		}
-	    //  System.out.println(aTree.getLeafList().get(4).getNodeNumber()+":"+aTree.getLeafList().get(4).getNodeName());
+	     //System.out.println(aTree.getLeafList().get(4).getNodeNumber()+":"+aTree.getLeafList().get(4).getNodeName()+":"+aTree.getLeafList().get(4).getNodeDepth());
 	    
 	    br.close();
 	    isr.close();
