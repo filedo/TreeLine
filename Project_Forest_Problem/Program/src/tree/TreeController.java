@@ -31,7 +31,7 @@ public class TreeController extends mvc.Controller {
 			Point aPoint = aMouseEvent.getPoint();
 			aPoint.translate(view.scrollAmount().x, view.scrollAmount().y);
 			System.out.println(aPoint);
-			System.out.println(aTreeModel.getTree().getLeaf().getNodeName());
+			System.out.println(aTreeModel.getTree().getLeafList().get(4).getNodeName());
 			
 			return;
 		}

@@ -9,6 +9,14 @@ public class Tree {
      */
     private ArrayList<Leaf> aLeafList;
     /**
+     * Branchのインスタンスたちを束縛する。
+     */
+    private ArrayList<Branch> aBranchList;
+    /**
+     * 枝を束縛する。
+     */
+    private Branch aBranch;
+    /**
      * 葉を束縛する。
      */
     private Leaf aLeaf;
@@ -21,6 +29,7 @@ public class Tree {
     public Tree()
     {
 	aLeafList = new ArrayList<Leaf>();
+	aBranchList = new ArrayList<Branch>();
     }
     /**
      * 樹上整列の座標を求める。
@@ -64,4 +73,18 @@ public class Tree {
     {
 	return this.aLeafList;
     }
+	public Branch getBranch() {
+		return aBranch;
+	}
+	public void setBranch(Branch aBranch) {
+		this.aBranch = aBranch;
+		return;
+	}
+	public ArrayList<Branch> getBranchList() {
+		return aBranchList;
+	}
+	public void addBranchList(Branch aBranch) {
+	aBranchList.add(aBranch);
+	return;
+	}
 }

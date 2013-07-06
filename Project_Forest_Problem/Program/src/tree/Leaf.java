@@ -15,11 +15,11 @@ public class Leaf {
      */
     private Integer nodeDepth;
     
-    public Leaf()
+    public Leaf(Integer nodeNumber,String nodeName,Integer nodeDepth)
     {
-        this.nodeNumber=0;
-        this.nodeName=null;
-        this.nodeDepth=0;
+        this.nodeNumber=nodeNumber;
+        this.nodeName=nodeName;
+        this.nodeDepth=nodeDepth;
     }
     /**
      * ノードの名前を応答する。
