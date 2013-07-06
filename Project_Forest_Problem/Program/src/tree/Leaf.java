@@ -1,6 +1,12 @@
 package tree;
 
-public class Leaf {
+import java.awt.Color;
+import java.awt.Font;
+
+import javax.swing.JLabel;
+import javax.swing.border.LineBorder;
+
+public class Leaf extends JLabel{
     
     /**
      * ノードの名前を束縛する。
@@ -20,6 +26,9 @@ public class Leaf {
         this.nodeNumber=nodeNumber;
         this.nodeName=nodeName;
         this.nodeDepth=nodeDepth;
+        this.setText(nodeName);
+        this.setFont(new Font("Serif", Font.PLAIN, TreeLiteral.FONT_SIZE));
+        this.setBorder(new LineBorder(Color.BLACK,TreeLiteral.BORDERLINE_SIZE,false));
     }
     /**
      * ノードの名前を応答する。

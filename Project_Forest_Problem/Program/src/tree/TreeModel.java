@@ -82,7 +82,6 @@ public class TreeModel extends mvc.Model{
             boolean branches = false;
             boolean tree = false;
             TreeMap<Integer,String> nodesMap = new TreeMap<Integer,String>();
-            TreeMap<Integer,ArrayList<Integer>> branchesMap = new TreeMap<Integer,ArrayList<Integer>>();
             ArrayList<Integer> nodeDepthList = new ArrayList<Integer>();
             
             while((line=br.readLine()) != null)
