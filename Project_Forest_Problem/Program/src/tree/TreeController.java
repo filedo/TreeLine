@@ -28,11 +28,13 @@ public class TreeController extends mvc.Controller {
 		 */
 		public void mouseClicked(MouseEvent aMouseEvent)
 		{
+			//描画完了したら
+			if(aTreeModel.getMode() == TreeLiteral.END){
 			Point aPoint = aMouseEvent.getPoint();
 			aPoint.translate(view.scrollAmount().x, view.scrollAmount().y);
 			System.out.println(aPoint);
 			System.out.println(aTreeModel.getTree().getLeafList().get(4).getNodeName());
-			
+			}
 			return;
 		}
 

@@ -25,6 +25,7 @@ public class TreeModel extends mvc.Model{
     public TreeModel()
     {
         super();
+        mode=TreeLiteral.START;
         aTree=new Tree();
         load();
     }
@@ -78,9 +79,11 @@ public class TreeModel extends mvc.Model{
             BufferedReader br = new BufferedReader(isr);
             
             String line;
+            //ノード数
+        	int n = 0;
             boolean nodes = false;
             boolean branches = false;
-            boolean tree = false;
+            boolean trees = false;
             TreeMap<Integer,String> nodesMap = new TreeMap<Integer,String>();
             ArrayList<Integer> nodeDepthList = new ArrayList<Integer>();
             
@@ -90,24 +93,24 @@ public class TreeModel extends mvc.Model{
                 {
                     branches = false;
                     nodes = false;
-                    tree = true;
+                    trees = true;
                     line=br.readLine();
                 }
                 if(line.equals("nodes:"))
                 {
                     branches = false;
                     nodes = true;
-                    tree = false;
+                    trees = false;
                     line=br.readLine();
                 }
                 if(line.equals("branches:"))
                 {
                     branches = true;
                     nodes = false;
-                    tree = false;
+                    trees = false;
                     line=br.readLine();
                 }
-                if(tree)
+                if(trees)
                 {
                     Integer nodeDepth = 0;
                     String nodeName;
@@ -170,11 +173,13 @@ public class TreeModel extends mvc.Model{
                 aTree.getLeaf().setNodeNumber(key);
                 aTree.getLeaf().setNodeDepth(nodeDepth);
                 aTree.addLeafList(aLeaf);*/
-            	 String nodeName = nodesMap.get( key );
-                 Integer nodeDepth = nodeDepthList.get(key-1);
-                 Leaf aLeaf=new Leaf(key,nodeName,nodeDepth);
-                 aTree.setLeaf(aLeaf);
-                 aTree.addLeafList(aLeaf);
+            	String nodeName = nodesMap.get( key );
+                Integer nodeDepth = nodeDepthList.get(key-1);
+                Leaf aLeaf=new Leaf(key,nodeName,nodeDepth);
+                aLeaf.setDefaultPosition(n);
+                aTree.setLeaf(aLeaf);
+                aTree.addLeafList(aLeaf);
+                n += 1;
             }
             
             System.out.println

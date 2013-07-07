@@ -73,16 +73,32 @@ public class Tree {
     {
 	return this.aLeafList;
     }
+    /**
+     * 枝を応答する。
+     * @return
+     */
 	public Branch getBranch() {
 		return aBranch;
 	}
+	/**
+	 * 枝を設定する。
+	 * @param aBranch
+	 */
 	public void setBranch(Branch aBranch) {
 		this.aBranch = aBranch;
 		return;
 	}
+	/**
+	 * 枝のリストを応答する。
+	 * @return
+	 */
 	public ArrayList<Branch> getBranchList() {
 		return aBranchList;
 	}
+	/**
+	 * 枝をリストに追加する。
+	 * @param aBranch
+	 */
 	public void addBranchList(Branch aBranch) {
 	aBranchList.add(aBranch);
 	return;
