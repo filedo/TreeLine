@@ -6,7 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 
-public class Example extends Object{
+public class Example extends Object
+{
 	
 	public static void main(String[] args)
 	{

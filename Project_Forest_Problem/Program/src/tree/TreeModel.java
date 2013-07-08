@@ -12,7 +12,8 @@ import java.util.Iterator;
 import java.util.TreeMap;
 import java.util.concurrent.CountDownLatch;
 
-public class TreeModel extends mvc.Model{
+public class TreeModel extends mvc.Model
+{
     /**
      * 現在のモードを束縛する。
      */
@@ -73,7 +74,8 @@ public class TreeModel extends mvc.Model{
         
         String inFileName = "Project_Forest_Problem/Requirement/texts/tree.txt";	 // 入力ファイル名
         
-        try {
+        try 
+        {
             FileInputStream fis = new FileInputStream(inFileName);
             InputStreamReader isr = new InputStreamReader(fis , "UTF-8");
             BufferedReader br = new BufferedReader(isr);
@@ -115,12 +117,15 @@ public class TreeModel extends mvc.Model{
                     
                     // 一行の中の改行文字を全て削除し、"|--"で分割
                     String[] item = line.replaceAll("\n","").split("\\|-- ");
-                    if (item.length == 1) {
+                    if (item.length == 1) 
+                    {
                         // 深さ0のとき
                         nodeDepth = 0;
                         nodeName = item[0];
                         nodeDepthList.add(nodeDepth);
-                    }else{
+                    }
+                    else
+                    {
                         // 深さ0以外のとき
                         // 深さ = 分割後の配列の長さ - 1
                         nodeDepth = item.length - 1;

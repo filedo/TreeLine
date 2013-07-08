@@ -3,7 +3,8 @@ package tree;
 import java.awt.Point;
 import java.util.ArrayList;
 
-public class Tree {
+public class Tree 
+{
     /**
      * Leafのインスタンスたちを束縛する。
      */
@@ -28,8 +29,8 @@ public class Tree {
     
     public Tree()
     {
-	aLeafList = new ArrayList<Leaf>();
-	aBranchList = new ArrayList<Branch>();
+    	aLeafList = new ArrayList<Leaf>();	
+    	aBranchList = new ArrayList<Branch>();
     }
     /**
      * 樹上整列の座標を求める。
@@ -37,7 +38,7 @@ public class Tree {
      */
     public Point treeDesign()
     {
-	return aPoint;
+    	return aPoint;
     }
     /**
      * 葉を設定する。
@@ -71,20 +72,22 @@ public class Tree {
      */
     public ArrayList<Leaf> getLeafList()
     {
-	return this.aLeafList;
+		return this.aLeafList;
     }
     /**
      * 枝を応答する。
      * @return
      */
-	public Branch getBranch() {
+	public Branch getBranch() 
+	{
 		return aBranch;
 	}
 	/**
 	 * 枝を設定する。
 	 * @param aBranch
 	 */
-	public void setBranch(Branch aBranch) {
+	public void setBranch(Branch aBranch) 
+	{
 		this.aBranch = aBranch;
 		return;
 	}
@@ -92,15 +95,17 @@ public class Tree {
 	 * 枝のリストを応答する。
 	 * @return
 	 */
-	public ArrayList<Branch> getBranchList() {
+	public ArrayList<Branch> getBranchList()
+	{
 		return aBranchList;
 	}
 	/**
 	 * 枝をリストに追加する。
 	 * @param aBranch
 	 */
-	public void addBranchList(Branch aBranch) {
-	aBranchList.add(aBranch);
-	return;
+	public void addBranchList(Branch aBranch) 
+	{
+		aBranchList.add(aBranch);
+		return;
 	}
 }

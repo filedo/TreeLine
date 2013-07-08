@@ -5,7 +5,8 @@ import java.awt.Graphics;
 import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 
-public class TreeView extends mvc.View{
+public class TreeView extends mvc.View
+{
 	/**
 	 * TreeModelを束縛する。
 	 */

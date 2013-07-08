@@ -3,7 +3,8 @@ package tree;
 /**
  * 定数を保持するクラス
  */
-public class TreeLiteral {
+public class TreeLiteral 
+{
 	/**
 	 * フォントのサイズを束縛するリテラル。
 	 */
