@@ -3,6 +3,7 @@ package tree;
 import java.awt.Dimension;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 
 public class Example extends Object{
@@ -12,7 +13,7 @@ public class Example extends Object{
 		TreeModel aTreeModel = new TreeModel();
 		TreeController aTreeController = new TreeController();
 		TreeView aTreeView = new TreeView(aTreeModel, aTreeController);
-	
+
 		JFrame aWindow;
 		aWindow = new JFrame("TreeLine");
 		aWindow.getContentPane().add(aTreeView);

@@ -30,7 +30,6 @@ public class Leaf extends JLabel{
         this.setFont(new Font("Serif", Font.PLAIN, TreeLiteral.FONT_SIZE));
         this.setBorder(new LineBorder(Color.BLACK,TreeLiteral.BORDERLINE_SIZE,false));
         this.setSize(this.getPreferredSize());
-        this.setBounds(0 , 0, this.getWidth(), this.getHeight());
     }
     /**
      * 樹上整列前のノードの位置を設定する。nはノード数。
@@ -39,7 +38,7 @@ public class Leaf extends JLabel{
     public void setDefaultPosition(int n)
     {
     	this.setBounds(0 , this.getHeight() * n + TreeLiteral.HEIGHT_INTERVAL * n, this.getWidth(), this.getHeight());
-    	System.out.println(this.getX()+":"+this.getY()+":"+this.getWidth()+":"+this.getHeight()+":"+nodeName);
+    	System.out.println("x="+this.getX()+" y="+this.getY()+" width="+this.getWidth()+" height="+this.getHeight()+" :"+nodeName);
     	return;
     }
     /**

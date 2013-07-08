@@ -56,6 +56,9 @@ public class TreeController extends mvc.Controller {
 		 */
 		public void setView(TreeView aTreeView){
 			this.aTreeView = aTreeView;
+			aTreeView.addMouseListener(this);
+			aTreeView.addMouseMotionListener(this);
+			aTreeView.addMouseWheelListener(this);
             return;
 		}
 }

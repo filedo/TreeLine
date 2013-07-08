@@ -32,7 +32,7 @@ public class TreeModel extends mvc.Model{
     
     public void perform()
     {
-        return;
+    	return;
     }
     
     /**
@@ -79,8 +79,6 @@ public class TreeModel extends mvc.Model{
             BufferedReader br = new BufferedReader(isr);
             
             String line;
-            //ノード数
-        	int n = 0;
             boolean nodes = false;
             boolean branches = false;
             boolean trees = false;
@@ -129,7 +127,6 @@ public class TreeModel extends mvc.Model{
                         nodeName = item[item.length - 1];
                         nodeDepthList.add(nodeDepth);
                     }
-                    //		System.out.println(nodeDepthList.size());
                 }
                 
                 if(nodes)
@@ -147,14 +144,6 @@ public class TreeModel extends mvc.Model{
                 }
                 if(branches)
                 {
-                    /*Branch aBranch = new Branch();
-                    aTree.setBranch(aBranch);
-                    String[] item = line.replaceAll("¥n","").split(", ");
-                    Integer from = Integer.valueOf(item[0]);
-                   	Integer to = Integer.valueOf(item[1]);
-                   	aTree.getBranch().setBranchFrom(from);
-                    aTree.getBranch().setBranchTo(to);
-                    aTree.addBranchList(aBranch);*/
                 	String[] item = line.replaceAll("¥n","").split(", ");
                     Integer from = Integer.valueOf(item[0]);
                    	Integer to = Integer.valueOf(item[1]);
@@ -165,29 +154,19 @@ public class TreeModel extends mvc.Model{
             }
             for ( Integer key : nodesMap.keySet() )
             {
-             /*   Leaf aLeaf=new Leaf();
-                aTree.setLeaf(aLeaf);
-                String nodeName = nodesMap.get( key );
-                Integer nodeDepth = nodeDepthList.get(key-1);
-                aTree.getLeaf().setNodeName(nodeName);
-                aTree.getLeaf().setNodeNumber(key);
-                aTree.getLeaf().setNodeDepth(nodeDepth);
-                aTree.addLeafList(aLeaf);*/
             	String nodeName = nodesMap.get( key );
                 Integer nodeDepth = nodeDepthList.get(key-1);
                 Leaf aLeaf=new Leaf(key,nodeName,nodeDepth);
-                aLeaf.setDefaultPosition(n);
                 aTree.setLeaf(aLeaf);
                 aTree.addLeafList(aLeaf);
-                n += 1;
             }
             
-            System.out.println
+        /*    System.out.println
             (aTree.getLeafList().get(4).getNodeNumber()+":"+
              aTree.getLeafList().get(4).getNodeName()+":"+
              aTree.getLeafList().get(4).getNodeDepth());
             System.out.println
-           (aTree.getBranchList().get(4).getBranchFrom()+":"+aTree.getBranchList().get(4).getBranchTo());
+           (aTree.getBranchList().get(4).getBranchFrom()+":"+aTree.getBranchList().get(4).getBranchTo());*/
             br.close();
             isr.close();
             fis.close();
