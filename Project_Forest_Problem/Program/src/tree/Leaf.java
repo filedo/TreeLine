@@ -45,7 +45,7 @@ public class Leaf extends JLabel implements MouseListener
      */
     public void setDefaultPosition(int n,int x,int y)
     {
-    	this.setBounds(0+x , (this.getHeight() * n + TreeLiteral.HEIGHT_INTERVAL * n)+y, this.getWidth(), this.getHeight());
+    	this.setBounds(0 + x , (this.getHeight() * n + TreeLiteral.HEIGHT_INTERVAL * n) + y, this.getWidth(), this.getHeight());
     	System.out.println("x="+this.getX()+" y="+this.getY()+" width="+this.getWidth()+" height="+this.getHeight()+" :"+nodeName);
     	return;
     }
