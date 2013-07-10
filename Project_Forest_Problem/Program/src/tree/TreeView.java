@@ -52,6 +52,14 @@ public class TreeView extends mvc.View
 		this.add(aLeaf);
 		n++;
 	    }
+		for ( Branch aBranch : aTreeModel.getTree().getBranchList() )
+		{
+			aGraphics.setColor(Color.black);
+			Leaf from = aTreeModel.getTree().getLeafList().get(aBranch.getBranchFrom()-1);
+			Leaf to = aTreeModel.getTree().getLeafList().get(aBranch.getBranchTo()-1);
+			aGraphics.drawLine(from.getBounds().x+from.getSize().width, from.getBounds().y+from.getSize().height/2,
+								to.getBounds().x, to.getBounds().y+to.getSize().height/2);
+		}
 		return;
 	}
 
