@@ -18,6 +18,7 @@ public class TreeModel extends mvc.Model
      * 現在のモードを束縛する。
      */
     private int mode;
+    
     /**
      * 木を束縛する。
      */
@@ -54,6 +55,7 @@ public class TreeModel extends mvc.Model
         this.mode = mode;
         return;
     }
+    
     /**
      * 木を応答する。
      * @return

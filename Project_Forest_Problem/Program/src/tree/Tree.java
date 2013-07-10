@@ -9,14 +9,17 @@ public class Tree
      * Leafのインスタンスたちを束縛する。
      */
     private ArrayList<Leaf> aLeafList;
+    
     /**
      * Branchのインスタンスたちを束縛する。
      */
     private ArrayList<Branch> aBranchList;
+    
     /**
      * 枝を束縛する。
      */
     private Branch aBranch;
+    
     /**
      * 葉を束縛する。
      */
@@ -32,6 +35,7 @@ public class Tree
     	aLeafList = new ArrayList<Leaf>();	
     	aBranchList = new ArrayList<Branch>();
     }
+    
     /**
      * 樹上整列の座標を求める。
      * @return
@@ -40,6 +44,7 @@ public class Tree
     {
     	return aPoint;
     }
+    
     /**
      * 葉を設定する。
      * @param aLeaf
@@ -49,6 +54,7 @@ public class Tree
         this.aLeaf = aLeaf;
         return;
     }
+    
     /**
      * 葉を応答する。
      * @return
@@ -57,6 +63,7 @@ public class Tree
     {
         return this.aLeaf;
     }
+    
     /**
      * 葉をリストに追加する。
      * @param aLeaf
@@ -66,6 +73,7 @@ public class Tree
         aLeafList.add(aLeaf);
         return;
     }
+    
     /**
      * 葉のリストを応答する。
      * @return
@@ -74,6 +82,7 @@ public class Tree
     {
 		return this.aLeafList;
     }
+    
     /**
      * 枝を応答する。
      * @return
@@ -82,6 +91,7 @@ public class Tree
 	{
 		return aBranch;
 	}
+	
 	/**
 	 * 枝を設定する。
 	 * @param aBranch
@@ -91,6 +101,7 @@ public class Tree
 		this.aBranch = aBranch;
 		return;
 	}
+	
 	/**
 	 * 枝のリストを応答する。
 	 * @return
@@ -99,6 +110,7 @@ public class Tree
 	{
 		return aBranchList;
 	}
+	
 	/**
 	 * 枝をリストに追加する。
 	 * @param aBranch

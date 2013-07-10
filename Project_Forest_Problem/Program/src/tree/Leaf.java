@@ -16,10 +16,12 @@ public class Leaf extends JLabel implements MouseListener
      * ノードの名前を束縛する。
      */
     private String nodeName;
+    
     /**
      * ノードの番号を束縛する。
      */
     private Integer nodeNumber;
+    
     /**
      * ノードの深さを束縛する。
      */
@@ -41,9 +43,9 @@ public class Leaf extends JLabel implements MouseListener
      * 樹上整列前のノードの位置を設定する。nはノード数。
      * @param n
      */
-    public void setDefaultPosition(int n)
+    public void setDefaultPosition(int n,int x,int y)
     {
-    	this.setBounds(0 , this.getHeight() * n + TreeLiteral.HEIGHT_INTERVAL * n, this.getWidth(), this.getHeight());
+    	this.setBounds(0+x , (this.getHeight() * n + TreeLiteral.HEIGHT_INTERVAL * n)+y, this.getWidth(), this.getHeight());
     	System.out.println("x="+this.getX()+" y="+this.getY()+" width="+this.getWidth()+" height="+this.getHeight()+" :"+nodeName);
     	return;
     }
