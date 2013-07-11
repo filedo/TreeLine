@@ -230,7 +230,7 @@
                                             -->
                                             </style>
                                         <title>ソフトウェア工学IIの小テスト「樹状整列」テスト仕様書</title>
-    </head>
+                                        </head>
     <body>
         <div id="menu">
             <ul>
@@ -259,7 +259,7 @@
                 <li><a href="#Tree">Tree</a>（ツリー）</li>
                 <li><a href="#Leaf">Leaf</a>（リーフ）</li>
                 <li><a href="#Branch">Branch</a>（ブランチ）</li>
-        </ul>
+                </ul>
         <div class="belt">
             <h3><a name="Example" href="../Program/index.html#Example">Example（メインクラス）</a></h3>
         </div>
@@ -737,7 +737,7 @@
                                     <td class="left-padding">樹上整列の座標を束縛する。</td>
                                     <td class="left-padding">良好（2010年7月25日）</td>
                                 </tr>
-
+                                
                             </tbody>
                         </table>
                     </td>
@@ -827,7 +827,7 @@
                                     <td class="left-padding">枝のリストを応答する。</td>
                                     <td class="left-padding">良好（2010年7月25日）</td>
                                 </tr>
-
+                                
                             </tbody>
                         </table>
                     </td>
@@ -988,6 +988,118 @@
                 </tr>
             </tbody>
         </table>
-        <div class="right-small">Copyright 2013 Project TreeLine, Updated: 2013/02/27 (Created: 2009/11/11)</div>
+        <div class="belt">
+            <h3><a name="Branch" href="../Program/index.html#Branch">Branch（ブランチ）</a></h3>
+        </div>
+        <table summary="table">
+            <tbody>
+                <tr>
+                    <td>
+                        <table border="1" summary="table">
+                            <tbody>
+                                <tr>
+                                    <th class="left-padding" abbr="1">属性（インスタンス変数）</th>
+                                    <th class="left-padding" abbr="2">束縛</th>
+                                    <th class="left-padding" abbr="3">分類</th>
+                                    <th class="left-padding" abbr="4">説明</th>
+                                    <th class="left-padding" abbr="5">テスト結果</th>
+                                </tr>
+                                <tr>
+                                    <td class="left-padding"><code>Integer</code></td>
+                                    <td class="left-padding"><code>from</code></td>
+                                    <td class="left-padding"><code>private</code></td>
+                                    <td class="left-padding">枝の根元を束縛する。</td>
+                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                </tr>
+                                <tr>
+                                    <td class="left-padding"><code>Integer</code></td>
+                                    <td class="left-padding"><code>to</code></td>
+                                    <td class="left-padding"><code>private</code></td>
+                                    <td class="left-padding">枝の終端を束縛する。</td>
+                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table summary="table">
+            <tbody>
+                <tr>
+                    <td>
+                        <table border="1" summary="table">
+                            <tbody>
+                                <tr>
+                                    <th class="left-padding" abbr="1">メソッド（操作）</th>
+                                    <th class="left-padding" abbr="2">応答</th>
+                                    <th class="left-padding" abbr="3">分類</th>
+                                    <th class="left-padding" abbr="4">説明</th>
+                                    <th class="left-padding" abbr="5">テスト結果</th>
+                                </tr>
+                                <tr>
+                                    <td class="left-padding"><code><a href="../Program/index.html#Branch-Branch">Branch(Integer from,Integer to)</a></code></td>
+                                    <td class="left-padding"><code>instance</code></td>
+                                    <td class="left-padding"><code>public</code></td>
+                                    <td class="left-padding">始点と終点を指定してブランチを作るコンストラクタ。</td>
+                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                </tr>
+                                <tr>
+                                    <td class="left-padding"><code><a href="../Program/index.html#Branch-getBranchFrom">getBranchFrom()</a></code></td>
+                                    <td class="left-padding"><code>Integer</code></td>
+                                    <td class="left-padding"><code>public</code></td>
+                                    <td class="left-padding">枝の根元を応答する。</td>
+                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                </tr>
+                                <tr>
+                                    <td class="left-padding"><code><a href="../Program/index.html#Branch-setBranchFrom">setBranchFrom(Branch aBranch)</a></code></td>
+                                    <td class="left-padding"><code>void</code></td>
+                                    <td class="left-padding"><code>public</code></td>
+                                    <td class="left-padding">枝の根元を設定する。</td>
+                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                </tr>
+                                <tr>
+                                    <td class="left-padding"><code><a href="../Program/index.html#Branch-getBranchTo">getBranchTo()</a></code></td>
+                                    <td class="left-padding"><code>Branch</code></td>
+                                    <td class="left-padding"><code>public</code></td>
+                                    <td class="left-padding">枝の終端を応答する。</td>
+                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                </tr>
+                                <tr>
+                                    <td class="left-padding"><code><a href="../Program/index.html#Branch-setBranchTo">setBranchTo(Integer to)</a></code></td>
+                                    <td class="left-padding"><code>void</code></td>
+                                    <td class="left-padding"><code>public</code></td>
+                                    <td class="left-padding">枝の終端を設定する。</td>
+                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                </tr>
+                                <tr>
+                                    <td class="left-padding"><code><a href="../Program/index.html#Tree-getLeafList">getLeafList()</a></code></td>
+                                    <td class="left-padding"><code>ArrayList&lt;Leaf&gt;</code></td>
+                                    <td class="left-padding"><code>public</code></td>
+                                    <td class="left-padding">葉のリストを応答する。</td>
+                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                </tr>
+                                <tr>
+                                    <td class="left-padding"><code><a href="../Program/index.html#Tree-setBranch">setBranch(Branch aBranch)</a></code></td>
+                                    <td class="left-padding"><code>void</code></td>
+                                    <td class="left-padding"><code>public</code></td>
+                                    <td class="left-padding">枝を設定する。</td>
+                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                </tr>
+                                <tr>
+                                    <td class="left-padding"><code><a href="../Program/index.html#Tree-getBranch">getBranch()</a></code></td>
+                                    <td class="left-padding"><code>Branch</code></td>
+                                    <td class="left-padding"><code>public</code></td>
+                                    <td class="left-padding">枝を応答する。</td>
+                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <div class="right-small">Copyright 2013 Project TreeLine, Updated: 2013/07/11 (Created: 2009/11/11)</div>
     </body>
 </html>
