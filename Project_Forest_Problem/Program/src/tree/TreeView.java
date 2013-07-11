@@ -6,6 +6,9 @@ import java.awt.Point;
 import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 
+/**
+ * ツリービュー。
+ */
 public class TreeView extends mvc.View
 {
 	/**
@@ -23,11 +26,12 @@ public class TreeView extends mvc.View
 	 */
 	private Point offset;
 	
-	public TreeView(TreeModel aTreeModel)
-	{
-		super(aTreeModel);
-	}
-	
+	/**
+	 * インスタンスを生成して応答する。
+	 * 指定されたツリーモデルの依存物となり、ツリーコントローラを作り、ツリーモデルとツリービューを設定し、スクロール量を(0, 0)に設定する。
+	 * @param aTreeModel
+	 * @param aTreeController
+	 */
 	public TreeView(TreeModel aTreeModel,TreeController aTreeController)
 	{		
 		super(aTreeModel,aTreeController);
@@ -37,6 +41,10 @@ public class TreeView extends mvc.View
 		this.aTreeController.setModel(aTreeModel);
 		offset = new Point(0, 0);
 	}
+	/**
+	 * 指定されたグラフィクスに背景色（白色）でツリービュー全体を塗り、
+	 * その後にスクロール量（offset）を考慮してリーフとブランチを描画する。
+	 */
 	public void paintComponent(Graphics aGraphics)
 	{
 		int width;
@@ -48,9 +56,9 @@ public class TreeView extends mvc.View
 		aGraphics.fillRect(0, 0, width, height);
 		for ( Leaf aLeaf : aTreeModel.getTree().getLeafList() )
 		{
-		aLeaf.setDefaultPosition(n,offset.x,offset.y);
-		this.add(aLeaf);
-		n++;
+			aLeaf.setDefaultPosition(n,offset.x,offset.y);
+			this.add(aLeaf);
+			n++;
 	    }
 		for ( Branch aBranch : aTreeModel.getTree().getBranchList() )
 		{

@@ -1,5 +1,8 @@
 package tree;
 
+/**
+ * ブランチ。
+ */
 public class Branch 
 {
 
@@ -14,7 +17,7 @@ public class Branch
     private Integer to;
     
     /**
-     * Branchのコンストラクタ。
+     * 始点と終点を指定してブランチを作るコンストラクタ。
      */
     public Branch(Integer from,Integer to)
     {

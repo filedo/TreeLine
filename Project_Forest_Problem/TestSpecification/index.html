@@ -249,11 +249,16 @@ th {
 <hr>
 <h2>ソフトウェア工学IIの小テスト「樹状整列」テスト仕様書</h2>
 <div class="belt">
-<h3><a name="KanseiSaseteKudasai">完成させてください</a></h3>
 </div>
 <ul>
   <li><a href="#Example">Example</a>（メインクラス）
-  <li>…
+    <li><a href="#TreeModel">TreeModel</a>（ツリーモデル）</li>
+    <li><a href="#TreeView">TreeView</a>（ツリービュー）</li>
+    <li><a href="#TreeController">TreeController</a>（ツリーコントローラー）</li>
+    <li><a href="#TreeLiteral">TreeLiteral</a>（ツリーリテラル）</li>
+    <li><a href="#Tree">Tree</a>（ツリー）</li>
+    <li><a href="#Leaf">Leaf</a>（リーフ）</li>
+    <li><a href="#Branch">Branch</a>（ブランチ）</li>
 </ul>
 <div class="belt">
 <h3><a name="Example" href="../Program/index.html#Example">Example（メインクラス）</a></h3>
@@ -298,7 +303,7 @@ th {
             <th class="left-padding" abbr="5">テスト結果</th>
           </tr>
           <tr>
-            <td class="left-padding"><code><a href="../Program/index.html#Example-main">main(String[] arguments)</a></code></td>
+            <td class="left-padding"><code><a href="../Program/index.html#Example-main">main(String[] args)</a></code></td>
             <td class="left-padding"><code>void</code></td>
             <td class="left-padding"><code>public static</code></td>
             <td class="left-padding">コマンドラインを引数として受け取り、…、…。</td>
@@ -311,7 +316,319 @@ th {
     </tr>
   </tbody>
 </table>
+    <div class="belt">
+        <h3><a name="TreeModel" href="../Program/index.html#TreeModel">TreeModel（ツリーモデル）</a></h3>
+    </div>
+    <table summary="table">
+        <tbody>
+            <tr>
+                <td>
+                    <table border="1" summary="table">
+                        <tbody>
+                            <tr>
+                                <th class="left-padding" abbr="1">属性（インスタンス変数）</th>
+                                <th class="left-padding" abbr="2">束縛</th>
+                                <th class="left-padding" abbr="3">分類</th>
+                                <th class="left-padding" abbr="4">説明</th>
+                                <th class="left-padding" abbr="5">テスト結果</th>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code>mode</code></td>
+                                <td class="left-padding"><code>int</code></td>
+                                <td class="left-padding"><code>privare</code></td>
+                                <td class="left-padding">現在のモードを束縛する。</td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code>aTree</code></td>
+                                <td class="left-padding"><code>Tree</code></td>
+                                <td class="left-padding"><code>private</code></td>
+                                <td class="left-padding">木を束縛する。</td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table summary="table">
+        <tbody>
+            <tr>
+                <td>
+                    <table border="1" summary="table">
+                        <tbody>
+                            <tr>
+                                <th class="left-padding" abbr="1">メソッド（操作）</th>
+                                <th class="left-padding" abbr="2">応答</th>
+                                <th class="left-padding" abbr="3">分類</th>
+                                <th class="left-padding" abbr="4">説明</th>
+                                <th class="left-padding" abbr="5">テスト結果</th>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code><a href="../Program/index.html#TreeModel-TreeModel">TreeModel()</a></code></td>
+                                <td class="left-padding"><code>instance</code></td>
+                                <td class="left-padding"><code>public</code></td>
+                                <td class="left-padding">インスタンスを生成して、テキストファイルを読み込む。</td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code><a href="../Program/index.html#TreeModel-perform">perform</a></code></td>
+                                <td class="left-padding"><code>void</code></td>
+                                <td class="left-padding"><code>public</code></td>
+                                <td class="left-padding"></td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code><a href="../Program/index.html#TreeModel-getMode">getMode()</a></code></td>
+                                <td class="left-padding"><code>int</code></td>
+                                <td class="left-padding"><code>public</code></td>
+                                <td class="left-padding">現在のモードを応答する。</td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code><a href="../Program/index.html#TreeModel-setMode">setMode(int mode)</a></code></td>
+                                <td class="left-padding"><code>void</code></td>
+                                <td class="left-padding"><code>public</code></td>
+                                <td class="left-padding">現在のモードを設定する。</td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code><a href="../Program/index.html#TreeModel-getTree">getTree()</a></code></td>
+                                <td class="left-padding"><code>Tree</code></td>
+                                <td class="left-padding"><code>public</code></td>
+                                <td class="left-padding">木を応答する。</td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code><a href="../Program/index.html#TreeModel-load">load()</a></code></td>
+                                <td class="left-padding"><code>void</code></td>
+                                <td class="left-padding"><code>public</code></td>
+                                <td class="left-padding">ファイルを読み込む。</td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="belt">
+        <h3><a name="TreeView" href="../Program/index.html#TreeView">TreeView（ツリービュー）</a></h3>
+    </div>
+    <table summary="table">
+        <tbody>
+            <tr>
+                <td>
+                    <table border="1" summary="table">
+                        <tbody>
+                            <tr>
+                                <th class="left-padding" abbr="1">属性（インスタンス変数）</th>
+                                <th class="left-padding" abbr="2">束縛</th>
+                                <th class="left-padding" abbr="3">分類</th>
+                                <th class="left-padding" abbr="4">説明</th>
+                                <th class="left-padding" abbr="5">テスト結果</th>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code>aTreeModel</code></td>
+                                <td class="left-padding"><code>TreeModel</code></td>
+                                <td class="left-padding"><code>protected</code></td>
+                                <td class="left-padding">TreeModelを束縛する。</td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code>aTreeController</code></td>
+                                <td class="left-padding"><code>TreeController</code></td>
+                                <td class="left-padding"><code>protected</code></td>
+                                <td class="left-padding">TreeControllerを束縛する。</td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code>offset</code></td>
+                                <td class="left-padding"><code>Point</code></td>
+                                <td class="left-padding"><code>private</code></td>
+                                <td class="left-padding">スクロール量としてPointのインスタンスを束縛する。</td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table summary="table">
+        <tbody>
+            <tr>
+                <td>
+                    <table border="1" summary="table">
+                        <tbody>
+                            <tr>
+                                <th class="left-padding" abbr="1">メソッド（操作）</th>
+                                <th class="left-padding" abbr="2">応答</th>
+                                <th class="left-padding" abbr="3">分類</th>
+                                <th class="left-padding" abbr="4">説明</th>
+                                <th class="left-padding" abbr="5">テスト結果</th>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code><a href="../Program/index.html#TreeView-TreeView">TreeView(TreeModel aTreeModel,TreeContorller aTreeController)</a></code></td>
+                                <td class="left-padding"><code>instance</code></td>
+                                <td class="left-padding"><code>public</code></td>
+                                <td class="left-padding">インスタンスを生成して応答する。指定されたツリーモデルの依存物となり、ツリーコントローラを作り、ツリーモデルとツリービューを設定し、スクロール量を(0, 0)に設定する。</td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code><a href="../Program/index.html#TreeView-paintComponent">paintComponent(Graphics aGraphics)</a></code></td>
+                                <td class="left-padding"><code>void</code></td>
+                                <td class="left-padding"><code>public</code></td>
+                                <td class="left-padding">指定されたグラフィクスに背景色（白色）でツリービュー全体を塗り、その後にスクロール量（offset）を考慮してリーフとブランチを描画する。</td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code><a href="../Program/index.html#TreeView-scrollAmount">scrollAmount()</a></code></td>
+                                <td class="left-padding"><code>Point</code></td>
+                                <td class="left-padding"><code>public</code></td>
+                                <td class="left-padding">スクロール量（offsetの逆向きの大きさ）を応答する。</td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code><a href="../Program/index.html#TreeView-scrollBy">scrollBy(Point aPoint)</a></code></td>
+                                <td class="left-padding"><code>void</code></td>
+                                <td class="left-padding"><code>public</code></td>
+                                <td class="left-padding">スクロール量を指定された座標分だけ相対スクロールする。</td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code><a href="../Program/index.html#TreeView-scrollTo">scrollTo(Point aPoint)</a></code></td>
+                                <td class="left-padding"><code>void</code></td>
+                                <td class="left-padding"><code>public</code></td>
+                                <td class="left-padding">スクロール量を指定された座標に設定（絶対スクロール）する。</td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="belt">
+        <h3><a name="TreeController" href="../Program/index.html#TreeController">TreeController（ツリーコントローラ）</a></h3>
+    </div>
+    <table summary="table">
+        <tbody>
+            <tr>
+                <td>
+                    <table border="1" summary="table">
+                        <tbody>
+                            <tr>
+                                <th class="left-padding" abbr="1">属性（インスタンス変数）</th>
+                                <th class="left-padding" abbr="2">束縛</th>
+                                <th class="left-padding" abbr="3">分類</th>
+                                <th class="left-padding" abbr="4">説明</th>
+                                <th class="left-padding" abbr="5">テスト結果</th>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code>aTreeModel</code></td>
+                                <td class="left-padding"><code>TreeModel</code></td>
+                                <td class="left-padding"><code>protected</code></td>
+                                <td class="left-padding">TreeModelを束縛する。</td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code>aTreeView</code></td>
+                                <td class="left-padding"><code>TreeView</code></td>
+                                <td class="left-padding"><code>protected</code></td>
+                                <td class="left-padding">TreeViewを束縛する。</td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code>previous</code></td>
+                                <td class="left-padding"><code>Point</code></td>
+                                <td class="left-padding"><code>private</code></td>
+                                <td class="left-padding">以前にマウスのボタンが押下された場所をPointのインスタンスとして束縛する。</td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code>current</code></td>
+                                <td class="left-padding"><code>Point</code></td>
+                                <td class="left-padding"><code>private</code></td>
+                                <td class="left-padding">現在にマウスのボタンが押下された場所をPointのインスタンスとして束縛する。</td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table summary="table">
+        <tbody>
+            <tr>
+                <td>
+                    <table border="1" summary="table">
+                        <tbody>
+                            <tr>
+                                <th class="left-padding" abbr="1">メソッド（操作）</th>
+                                <th class="left-padding" abbr="2">応答</th>
+                                <th class="left-padding" abbr="3">分類</th>
+                                <th class="left-padding" abbr="4">説明</th>
+                                <th class="left-padding" abbr="5">テスト結果</th>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code><a href="../Program/index.html#TreeController-TreeController">TreeController()</a></code></td>
+                                <td class="left-padding"><code>instance</code></td>
+                                <td class="left-padding"><code>public</code></td>
+                                <td class="left-padding">インスタンスを生成して応答する。すべてのインスタンス変数（aTreeModel, aTreeView, previous, current）をnull化する。</td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code><a href="../Program/index.html#TreeController-mouseClicked">mouseClicked(MouseEvent aMouseEvent)</a></code></td>
+                                <td class="left-padding"><code>void</code></td>
+                                <td class="left-padding"><code>public</code></td>
+                                <td class="left-padding">指定されたマウスイベントからマウスカーサの位置を獲得して、モデル座標系でのクリック位置を割り出して標準出力に出力する。</td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code><a href="../Program/index.html#TreeController-mouseDragged">mouseDragged(MouseEvent aMouseEvent)</a></code></td>
+                                <td class="left-padding"><code>void</code></td>
+                                <td class="left-padding"><code>public</code></td>
+                                <td class="left-padding">マウスカーサの形状を移動の形に変化させ、指定されたマウスイベントからマウスカーサの位置を獲得して、インスタンス変数currentに設定すると共に、以前のマウスカーサの位置からの差分を計算する。そして、その差分だけビューに対してスクロールを依頼し、その後にビューの再描画を依頼する。最後にインスタンス変数previousをインスタンス変数currentに更新する。</td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code><a href="../Program/index.html#TreeController-mousePressed">mousePressed(MouseEvent aMouseEvent)</a></code></td>
+                                <td class="left-padding"><code>void</code></td>
+                                <td class="left-padding"><code>public</code></td>
+                                <td class="left-padding">マウスカーサの形状を十字に変化させ、指定されたマウスイベントからマウスカーサの位置を獲得して、インスタンス変数currentに設定する共にインスタンス変数previousをインスタンス変数currentに更新する。</td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code><a href="../Program/index.html#TreeController-mouseReleased">mouseReleased(MouseEvent aMouseEvent)</a></code></td>
+                                <td class="left-padding"><code>void</code></td>
+                                <td class="left-padding"><code>public</code></td>
+                                <td class="left-padding">マウスカーサの形状をデフォルトに戻し、指定されたマウスイベントからマウスカーサの位置を獲得して、インスタンス変数currentに設定する共にインスタンス変数previousをインスタンス変数currentに更新する。</td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code><a href="../Program/index.html#TreeController-setModel">setModel(TreeModel aTreeModel)</a></code></td>
+                                <td class="left-padding"><code>void</code></td>
+                                <td class="left-padding"><code>public</code></td>
+                                <td class="left-padding">指定されたモデルをインスタンス変数TreeModelに設定する。</td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                            <tr>
+                                <td class="left-padding"><code><a href="../Program/index.html#TreeController-setView">setView(TreeView aTreeView)</a></code></td>
+                                <td class="left-padding"><code>void</code></td>
+                                <td class="left-padding"><code>public</code></td>
+                                <td class="left-padding">指定されたビューをインスタンス変数aViewに設定し、ツリービューのマウスのリスナおよびモーションリスナそしてホイールリスナをこのコントローラにする。</td>
+                                <td class="left-padding">良好（2010年7月25日）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 <hr>
-<div class="right-small">Copyright 20xx Project xx, Updated: 2013/02/27 (Created: 2009/11/11)</div>
+<div class="right-small">Copyright 2013 Project TreeLine, Updated: 2013/02/27 (Created: 2009/11/11)</div>
 </body>
 </html>

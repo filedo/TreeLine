@@ -3,6 +3,9 @@ package tree;
 import java.awt.Point;
 import java.util.ArrayList;
 
+/**
+ * ツリー。
+ */
 public class Tree 
 {
     /**
@@ -30,6 +33,9 @@ public class Tree
      */
     private Point aPoint;
     
+    /**
+     * ツリーを作るコンストラクタ
+     */
     public Tree()
     {
     	aLeafList = new ArrayList<Leaf>();	

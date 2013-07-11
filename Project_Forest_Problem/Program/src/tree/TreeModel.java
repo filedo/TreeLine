@@ -12,6 +12,9 @@ import java.util.Iterator;
 import java.util.TreeMap;
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * ツリーモデル。
+ */
 public class TreeModel extends mvc.Model
 {
     /**
@@ -24,6 +27,9 @@ public class TreeModel extends mvc.Model
      */
     private Tree aTree;
     
+    /**
+     * インスタンスを生成して、テキストファイルを読み込む。
+     */
     public TreeModel()
     {
         super();

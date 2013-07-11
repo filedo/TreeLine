@@ -9,6 +9,9 @@ import java.awt.event.MouseListener;
 import javax.swing.JLabel;
 import javax.swing.border.LineBorder;
 
+/**
+ *リーフ。
+ */
 public class Leaf extends JLabel implements MouseListener
 {
     
@@ -27,6 +30,12 @@ public class Leaf extends JLabel implements MouseListener
      */
     private Integer nodeDepth;
     
+    /**
+     * ノードの番号,名前,深さを指定して葉を作るコンストラクタ。
+     * @param nodeNumber
+     * @param nodeName
+     * @param nodeDepth
+     */
     public Leaf(Integer nodeNumber,String nodeName,Integer nodeDepth)
     {
         this.nodeNumber=nodeNumber;
@@ -102,16 +111,25 @@ public class Leaf extends JLabel implements MouseListener
 		return;
 	}	
 	
+	/**
+	 * ノードの名前を標準出力する。
+	 */
 	 public void mouseClicked(MouseEvent aMouseEvent)
 	 {
 	    System.out.println(nodeName);
 	 }
 	 
+	 /**
+	  *何もしない。 
+	  */
 	public void mouseExited(MouseEvent aMouseEvent) 
 	{
 		
 	}
 	
+	/**
+	 * マウスカーサの形状をデフォルトに戻す。
+	 */
 	public void mousePressed(MouseEvent aMouseEvent) 
 	{
 		Cursor aCursor = Cursor.getDefaultCursor();
@@ -119,6 +137,9 @@ public class Leaf extends JLabel implements MouseListener
 		aComponent.setCursor(aCursor);
 	}
 	
+	/**
+	 * マウスカーサの形状を手に変化させる。
+	 */
 	public void mouseReleased(MouseEvent aMouseEvent)
 	{
 		Cursor aCursor = Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
@@ -126,6 +147,9 @@ public class Leaf extends JLabel implements MouseListener
 		aComponent.setCursor(aCursor);		
 	}
 	
+	/**
+	 * マウスカーサの形状を手に変化させる。
+	 */
 	public void mouseEntered(MouseEvent aMouseEvent) 
 	{
 		Cursor aCursor = Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);

@@ -5,6 +5,9 @@ import java.awt.Cursor;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 
+/**
+ * ツリーコントローラー。
+ */
 public class TreeController extends mvc.Controller 
 {
 	
@@ -28,6 +31,10 @@ public class TreeController extends mvc.Controller
 	 */
 	private Point current;
 
+	/**
+	 * インスタンスを生成して応答する。
+	 * すべてのインスタンス変数（aTreeModel, aTreeView, previous, current）をnull化する。
+	 */
 	public TreeController()
 	{
 		super();
@@ -111,7 +118,8 @@ public class TreeController extends mvc.Controller
 	}
 	
 	/**
-	 *  指定されたビューをインスタンス変数aTreeViewに設定する。
+	 * 指定されたビューをインスタンス変数aViewに設定し、
+	 * ツリービューのマウスのリスナおよびモーションリスナそしてホイールリスナをこのコントローラにする。
 	 * @param aTreeView
 	 */
 	public void setView(TreeView aTreeView)
