@@ -34,7 +34,7 @@ public class Tree
     private Point aPoint;
     
     /**
-     * ツリーを作るコンストラクタ
+     * ツリーを作るコンストラクタ。
      */
     public Tree()
     {

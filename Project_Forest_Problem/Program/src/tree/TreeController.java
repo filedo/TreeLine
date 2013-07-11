@@ -118,7 +118,7 @@ public class TreeController extends mvc.Controller
 	}
 	
 	/**
-	 * 指定されたビューをインスタンス変数aViewに設定し、
+	 * 指定されたビューをインスタンス変数aTreeViewに設定し、
 	 * ツリービューのマウスのリスナおよびモーションリスナそしてホイールリスナをこのコントローラにする。
 	 * @param aTreeView
 	 */
