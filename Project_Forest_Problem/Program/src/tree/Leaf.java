@@ -6,6 +6,8 @@ import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
+
 import javax.swing.JLabel;
 import javax.swing.border.LineBorder;
 
@@ -29,6 +31,11 @@ public class Leaf extends JLabel implements MouseListener
      * ノードの深さを束縛する。
      */
     private Integer nodeDepth;
+
+    /**
+     * 次のノードの番号を束縛する。
+     */
+	private ArrayList<Integer> nextNodeNumber;
     
     /**
      * ノードの番号,名前,深さを指定して葉を作るコンストラクタ。
@@ -41,6 +48,7 @@ public class Leaf extends JLabel implements MouseListener
         this.nodeNumber=nodeNumber;
         this.nodeName=nodeName;
         this.nodeDepth=nodeDepth;
+        this.nextNodeNumber=new ArrayList<Integer>();
         this.setText(nodeName);
         this.setFont(new Font("Serif", Font.PLAIN, TreeLiteral.FONT_SIZE));
         this.setBorder(new LineBorder(Color.BLACK,TreeLiteral.BORDERLINE_SIZE,false));
@@ -93,6 +101,18 @@ public class Leaf extends JLabel implements MouseListener
     	this.nodeNumber = nodeNumber;
         return;
     }
+    
+    public void setNextNodeNumber(Integer nextNodeNumber)
+    {
+    	nextNodeNumber++;
+    	this.nextNodeNumber.add(nextNodeNumber);
+    	return;
+    }
+    public ArrayList<Integer> getNextNodeNumber()
+    {
+    	return nextNodeNumber;
+    }
+    
     /**
      * ノードの深さを応答する。
      * @return
