@@ -1,89 +1,0 @@
-10
-
-dir
-70
-http://axa010.cse.kyoto-su.ac.jp/repositories/SE/Projects/Project_Forest_Problem
-http://axa010.cse.kyoto-su.ac.jp/repositories/SE
-
-
-
-2013-04-18T05:01:28.579260Z
-68
-aoki
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-94dec936-71fe-4141-98c9-1d23cbff7b9a
-
-Requirement
-dir
-
-TestSpecification
-dir
-
-DevelopmentResult
-dir
-
-Program
-dir
-
-index.html
-file
-
-
-
-
-2013-05-09T05:55:08.000000Z
-26a38fb5023dc55db76511b54737da60
-2013-04-18T05:01:28.579260Z
-68
-aoki
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6366
-
-BasicDesign
-dir
-
-DetailDesign
-dir
-
-DevelopmentPlan
-dir
-
-Manual
-dir
-
-TestResult
-dir
-
