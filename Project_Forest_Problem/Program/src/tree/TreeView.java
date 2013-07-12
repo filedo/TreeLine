@@ -59,6 +59,10 @@ public class TreeView extends mvc.View
 			aLeaf.setDefaultPosition(n,offset.x,offset.y);
 			this.add(aLeaf);
 			n++;
+			for(Integer to:aLeaf.getNextNodeNumber())
+			{
+				
+			}
 	    }
 		for ( Branch aBranch : aTreeModel.getTree().getBranchList() )
 		{

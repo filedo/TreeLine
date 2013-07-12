@@ -173,6 +173,13 @@ public class TreeModel extends mvc.Model
                 aTree.setLeaf(aLeaf);
                 aTree.addLeafList(aLeaf);
             }
+            for (Branch aBranch : aTree.getBranchList())
+            {
+            	Integer from = aBranch.getBranchFrom()-1;
+            	Integer to = aBranch.getBranchTo()-1;
+            	aTree.getLeafList().get(from).setNextNodeNumber(to);
+            //	System.out.println(aTree.getLeafList().get(from).getNextNodeNumber());
+            }
             
         /*    System.out.println
             (aTree.getLeafList().get(4).getNodeNumber()+":"+
@@ -196,6 +203,7 @@ public class TreeModel extends mvc.Model
         {
             e.printStackTrace();
         }
+        
         return;
         
     }
