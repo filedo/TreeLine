@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.text.Normalizer.Form;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.TreeMap;
@@ -154,32 +155,51 @@ public class TreeModel extends mvc.Model
                     {
                         nodesMap.put(key, nodeName);
                     }
+                    Leaf aLeaf = new Leaf(key, nodeName);
+                    aTree.addLeafList(aLeaf);
                 }
                 if(branches)
                 {
                 	String[] item = line.replaceAll("¥n","").split(", ");
                     Integer from = Integer.valueOf(item[0]);
                    	Integer to = Integer.valueOf(item[1]);
+                   	try
+                   	{
+                   		Leaf aLeaf = aTree.getLeafList().get(from-1);
+                   		Leaf childLeaf = aTree.getLeafList().get(to-1);
+                   		aLeaf.addChildLeaf(childLeaf);
+                   		childLeaf.addParent(aLeaf);
+					} 
+                   	catch (Exception e)
+					{
+						// TODO: handle exception
+						e.printStackTrace();
+					}
                    	Branch aBranch = new Branch(from,to);
                     aTree.setBranch(aBranch);
                     aTree.addBranchList(aBranch);
                 }
             }
-            for ( Integer key : nodesMap.keySet() )
-            {
-            	String nodeName = nodesMap.get( key );
-                Integer nodeDepth = nodeDepthList.get(key-1);
-                Leaf aLeaf=new Leaf(key,nodeName,nodeDepth);
-                aTree.setLeaf(aLeaf);
-                aTree.addLeafList(aLeaf);
-            }
-            for (Branch aBranch : aTree.getBranchList())
-            {
-            	Integer from = aBranch.getBranchFrom()-1;
-            	Integer to = aBranch.getBranchTo()-1;
-            	aTree.getLeafList().get(from).setNextNodeNumber(to);
-            //	System.out.println(aTree.getLeafList().get(from).getNextNodeNumber());
-            }
+            for (Leaf aLeaf : aTree.getLeafList()) {
+				for (Leaf childLeaf : aLeaf.getChildLeaves()) {
+					System.out.println(aLeaf.isRoot() + " "+ aLeaf.getNodeName() + " "+ childLeaf.getNodeName());
+				}
+			}
+//            for ( Integer key : nodesMap.keySet() )
+//            {
+//            	String nodeName = nodesMap.get( key );
+//                Integer nodeDepth = nodeDepthList.get(key-1);
+//                Leaf aLeaf=new Leaf(key,nodeName,nodeDepth);
+//                aTree.setLeaf(aLeaf);
+//                aTree.addLeafList(aLeaf);
+//            }
+//            for (Branch aBranch : aTree.getBranchList())
+//            {
+//            	Integer from = aBranch.getBranchFrom();
+//            	Integer to = aBranch.getBranchTo();
+////            	aTree.getLeafList().get(from).setNextNodeNumber(to);
+////            	System.out.println(from + " " + to);
+//            }
             
         /*    System.out.println
             (aTree.getLeafList().get(4).getNodeNumber()+":"+

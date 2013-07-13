@@ -36,6 +36,21 @@ public class Leaf extends JLabel implements MouseListener
      * 次のノードの番号を束縛する。
      */
 	private ArrayList<Integer> nextNodeNumber;
+	
+	/**
+	 * 葉に親がいるかどうか
+	 */
+	private boolean root = true;
+	
+	/**
+	 * 親を束縛する。
+	 */
+	private Leaf parentLeaf;
+	
+	/**
+	 * 子を束縛する。
+	 */
+    private ArrayList<Leaf> childLeaves = new ArrayList<Leaf>();
     
     /**
      * ノードの番号,名前,深さを指定して葉を作るコンストラクタ。
@@ -54,8 +69,52 @@ public class Leaf extends JLabel implements MouseListener
         this.setBorder(new LineBorder(Color.BLACK,TreeLiteral.BORDERLINE_SIZE,false));
         this.setSize(this.getPreferredSize());
 		this.addMouseListener(this);	    	
-      }
-  
+     }
+    
+    /**
+     * ノードの番号、名前を指定して葉を作るコンストラクタ。
+     * ノードの深さを指定しない。
+     * @param nodeNumber ノード番号
+     * @param nodeName	ノードの名前
+     */
+    public Leaf(Integer nodeNumber, String nodeName)
+    {
+    	this(nodeNumber, nodeName, null);
+    	System.out.println(nodeNumber + " " + nodeName +  "ノードの深さが未設定です。");
+    }
+    
+    public boolean isRoot() {
+    	return this.root;
+    }
+    
+    /**
+     * 葉に親を束縛する。
+     * 親がいれば根では無いので、rootをfalseにする。
+     * @param aLeaf 葉の親
+     */
+    public void addParent(Leaf aLeaf) { 
+    	this.parentLeaf = aLeaf;
+    	this.root = false;
+    }
+    
+    /**
+     * 葉に子の情報を追加する。
+     * @param leaf 葉の子
+     */
+    public void addChildLeaf(Leaf aLeaf)
+    {
+    	childLeaves.add(aLeaf);
+    } 
+    
+    /**
+     * 子の情報を返す。
+     * @return 子の葉(Leaf)のArrayList
+     */
+    public ArrayList<Leaf> getChildLeaves()
+    {
+    	return childLeaves;
+    }
+    
     /**
      * 樹上整列前のノードの位置を設定する。nはノード数。
      * @param n
@@ -175,5 +234,6 @@ public class Leaf extends JLabel implements MouseListener
 		Cursor aCursor = Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
 		Component aComponent = (Component)aMouseEvent.getSource();
 		aComponent.setCursor(aCursor);	
-	}	 
+	}
+
 }
