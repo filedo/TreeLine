@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Font;
+import java.awt.Point;
+import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -50,7 +52,7 @@ public class Leaf extends JLabel implements MouseListener
 	/**
 	 * 子を束縛する。
 	 */
-    private ArrayList<Leaf> childLeaves = new ArrayList<Leaf>();
+    private ArrayList<Leaf> childLeaves;
     
     /**
      * ノードの番号,名前,深さを指定して葉を作るコンストラクタ。
@@ -64,6 +66,7 @@ public class Leaf extends JLabel implements MouseListener
         this.nodeName=nodeName;
         this.nodeDepth=nodeDepth;
         this.nextNodeNumber=new ArrayList<Integer>();
+        this.childLeaves=new ArrayList<Leaf>();
         this.setText(nodeName);
         this.setFont(new Font("Serif", Font.PLAIN, TreeLiteral.FONT_SIZE));
         this.setBorder(new LineBorder(Color.BLACK,TreeLiteral.BORDERLINE_SIZE,false));
@@ -106,13 +109,27 @@ public class Leaf extends JLabel implements MouseListener
     	childLeaves.add(aLeaf);
     } 
     
+    public Leaf getParentLeaf() {
+    	return this.parentLeaf;
+    }
+    
     /**
      * 子の情報を返す。
      * @return 子の葉(Leaf)のArrayList
      */
     public ArrayList<Leaf> getChildLeaves()
     {
-    	return childLeaves;
+    	return this.childLeaves;
+    }
+
+    public void outPosition() {
+    	System.out.println("x="+this.getX()+" y="+this.getY()+" width="+this.getWidth()+" height="+this.getHeight()+" :"+nodeName);
+    	return;
+    }
+    
+    public void setPosition(int x, int y)
+    {	
+    	this.setBounds(x ,y, this.getWidth(), this.getHeight());
     }
     
     /**
@@ -122,9 +139,19 @@ public class Leaf extends JLabel implements MouseListener
     public void setDefaultPosition(int n,int x,int y)
     {
     	this.setBounds(0 + x , (this.getHeight() * n + TreeLiteral.HEIGHT_INTERVAL * n) + y, this.getWidth(), this.getHeight());
-    	System.out.println("x="+this.getX()+" y="+this.getY()+" width="+this.getWidth()+" height="+this.getHeight()+" :"+nodeName);
+//    	System.out.println("x="+this.getX()+" y="+this.getY()+" width="+this.getWidth()+" height="+this.getHeight()+" :"+nodeName);
     	return;
     }
+    
+    /**
+     * ノードの位置を応答する。
+     * @return Rectangle ノードの位置(x, y)、幅(width)、高さ(height)
+     */
+    public Rectangle getPosition()
+    {
+    	return this.getBounds();
+    }
+    
     /**
      * ノードの名前を応答する。
      * @return
