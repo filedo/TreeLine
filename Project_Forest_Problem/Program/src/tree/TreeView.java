@@ -49,7 +49,7 @@ public class TreeView extends mvc.View
 		{	
 			if (!aLeaf.getChildLeaves().isEmpty()) {
 //				for (Leaf childLeaf : aLeaf.getChildLeaves()) {
-//					calcPosition(childLeaf);	
+//					calcPosition(childLeaf, 0);	
 //				}
 				calcPosition(aLeaf.getChildLeaves().get(0), 0);
 			}
@@ -73,10 +73,10 @@ public class TreeView extends mvc.View
 					i++;
 				}
 				
-//				int childsize = aLeaf.getChildLeaves().size();
-//				int center = (aLeaf.getPosition().height * childsize + TreeLiteral.HEIGHT_INTERVAL * (childsize - 1)) / childsize;
-//				y = center - (aLeaf.getPosition().height / 2);
-//				aLeaf.setPosition(x, y);
+				int childsize = aLeaf.getChildLeaves().size();
+				int center = (aLeaf.getPosition().height * childsize + TreeLiteral.HEIGHT_INTERVAL * (childsize - 1)) / childsize;
+				y = y + center - (aLeaf.getPosition().height / 2);
+				aLeaf.setPosition(x, y);
 			}else{
 				return;
 			}
