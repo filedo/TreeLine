@@ -9,6 +9,8 @@ import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.TreeMap;
 
 import javax.swing.JLabel;
 import javax.swing.border.LineBorder;
@@ -121,7 +123,43 @@ public class Leaf extends JLabel implements MouseListener
     {
     	return this.childLeaves;
     }
+    
+    /**
+     * ある葉が持つ子孫を全てTreeMapに登録するための再帰メソッド
+     * @param aLeaf 葉
+     * @param descendantLeaves 葉を登録するTreeMap
+     */
+    private void addDescendantMap(Leaf aLeaf, TreeMap<String, Leaf> descendantLeaves)
+    {
+    	// 子がいる限りこのメソッドを再帰呼び出しする。
+    	for (Leaf aChildLeaf : aLeaf.getChildLeaves()) 
+    	{
+    		addDescendantMap(aChildLeaf, descendantLeaves);
+    	}
+    	// 自分は登録しないようにする。
+    	if (aLeaf != this) 
+    	{
+    		descendantLeaves.put(aLeaf.getNodeName(), aLeaf);
+    	}
+    	return;
+    }
 
+    /**
+     * この葉の子孫をTreeMapで取得する
+     * @return 子孫が登録されたTreeMap <葉の名前, 葉への参照>
+     */
+    public TreeMap<String, Leaf> getDescendants()
+    {
+    	TreeMap<String, Leaf> descendantLeaves = new TreeMap<String, Leaf>();
+    	addDescendantMap(this, descendantLeaves);
+    	// デバッグ用
+    	System.out.println("  " + this.nodeName);
+    	for (Map.Entry<String, Leaf> entry: descendantLeaves.entrySet()) {
+    		System.out.println("   " + entry.getKey() + " : " + entry.getValue());
+		}
+    	return descendantLeaves;
+    }
+    
     public void outPosition() {
     	System.out.println("x="+this.getX()+" y="+this.getY()+" width="+this.getWidth()+" height="+this.getHeight()+" :"+nodeName);
     	return;

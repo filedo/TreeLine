@@ -181,8 +181,10 @@ public class TreeModel extends mvc.Model
                 }
             }
             for (Leaf aLeaf : aTree.getLeafList()) {
+            	System.out.println("あああ");
+            	aLeaf.getDescendants();
 				for (Leaf childLeaf : aLeaf.getChildLeaves()) {
-					System.out.println(aLeaf.isRoot() + " "+ aLeaf.getNodeName() + " "+ childLeaf.getNodeName());
+//					System.out.println(aLeaf.isRoot() + " "+ aLeaf.getNodeName() + " "+ childLeaf.getNodeName());
 				}
 			}
 //            for ( Integer key : nodesMap.keySet() )
