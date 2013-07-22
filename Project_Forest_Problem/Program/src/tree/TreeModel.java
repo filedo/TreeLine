@@ -161,8 +161,8 @@ public class TreeModel extends mvc.Model
                 }
             }
             for (Leaf aLeaf : aTree.getLeafList()) {
-            	System.out.println("あああ");
-            	aLeaf.getDescendants();
+//            	System.out.println("あああ");
+            	aLeaf.setDescendantLeaves();
 				for (Leaf childLeaf : aLeaf.getChildLeaves()) {
 //					System.out.println(aLeaf.isRoot() + " "+ aLeaf.getNodeName() + " "+ childLeaf.getNodeName());
 				}

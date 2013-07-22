@@ -57,6 +57,11 @@ public class Leaf extends JLabel implements MouseListener
     private ArrayList<Leaf> childLeaves;
     
     /**
+     * 子孫を束縛するTreeMap<String:葉の名前, Leaf:葉>
+     */
+     private TreeMap<String, Leaf> descendantLeaves; 
+    
+    /**
      * ノードの番号,名前,深さを指定して葉を作るコンストラクタ。
      * @param nodeNumber
      * @param nodeName
@@ -69,6 +74,7 @@ public class Leaf extends JLabel implements MouseListener
         this.nodeDepth=nodeDepth;
         this.nextNodeNumber=new ArrayList<Integer>();
         this.childLeaves=new ArrayList<Leaf>();
+        this.descendantLeaves=new TreeMap<String, Leaf>();
         this.setText(nodeName);
         this.setFont(new Font("Serif", Font.PLAIN, TreeLiteral.FONT_SIZE));
         this.setBorder(new LineBorder(Color.BLACK,TreeLiteral.BORDERLINE_SIZE,false));
@@ -134,30 +140,38 @@ public class Leaf extends JLabel implements MouseListener
     	// 子がいる限りこのメソッドを再帰呼び出しする。
     	for (Leaf aChildLeaf : aLeaf.getChildLeaves()) 
     	{
-    		addDescendantMap(aChildLeaf, descendantLeaves);
+    		this.addDescendantMap(aChildLeaf, descendantLeaves);
     	}
-    	// 自分は登録しないようにする。
+    	// ダブり防止の為、自分(最初にこのメソッドを呼んだ葉)は登録しないようにする。
     	if (aLeaf != this) 
     	{
     		descendantLeaves.put(aLeaf.getNodeName(), aLeaf);
     	}
     	return;
     }
-
+    
     /**
-     * この葉の子孫をTreeMapで取得する
-     * @return 子孫が登録されたTreeMap <葉の名前, 葉への参照>
+     * 葉が持つ子孫を葉の名前をキーとし、葉を値としてTreeMapに追加する。
+     * 葉に子供の情報を持たせてから呼ぶ。
      */
-    public TreeMap<String, Leaf> getDescendants()
+    public void setDescendantLeaves()
     {
-    	TreeMap<String, Leaf> descendantLeaves = new TreeMap<String, Leaf>();
-    	addDescendantMap(this, descendantLeaves);
+    	this.addDescendantMap(this, this.descendantLeaves);
     	// デバッグ用
     	System.out.println("  " + this.nodeName);
-    	for (Map.Entry<String, Leaf> entry: descendantLeaves.entrySet()) {
+    	for (Map.Entry<String, Leaf> entry: this.descendantLeaves.entrySet())
+    	{
     		System.out.println("   " + entry.getKey() + " : " + entry.getValue());
 		}
-    	return descendantLeaves;
+    }
+    
+    /**
+     * この葉の子孫を取得する。
+     * @return 子孫が登録されたTreeMap <葉の名前, 葉への参照>
+     */
+    public TreeMap<String, Leaf> getDescendantLeaves()
+    {
+    	return this.descendantLeaves;
     }
     
     public void outPosition() {
