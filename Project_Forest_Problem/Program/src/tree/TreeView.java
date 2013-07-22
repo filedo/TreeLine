@@ -3,6 +3,7 @@ package tree;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
+import java.awt.Rectangle;
 import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 
@@ -41,6 +42,48 @@ public class TreeView extends mvc.View
 		this.aTreeController.setModel(aTreeModel);
 		offset = new Point(0, 0);
 	}
+	
+	private void calcPosition(Leaf aLeaf, int count)
+	{
+		if (aLeaf.isRoot())
+		{	
+			if (!aLeaf.getChildLeaves().isEmpty()) {
+//				for (Leaf childLeaf : aLeaf.getChildLeaves()) {
+//					calcPosition(childLeaf, 0);	
+//				}
+				calcPosition(aLeaf.getChildLeaves().get(0), 0);
+			}
+		}
+		else
+		{	
+			System.out.println(aLeaf.getNodeName());
+			Leaf parentLeaf = aLeaf.getParentLeaf();
+			Rectangle parentLeafPos = parentLeaf.getPosition();
+			int x = parentLeafPos.x + parentLeafPos.width + TreeLiteral.WIDTH_INTERVAL;
+			int y = parentLeafPos.y + (parentLeafPos.height + TreeLiteral.HEIGHT_INTERVAL) * count;
+			aLeaf.setPosition(x, y);
+			this.add(aLeaf);
+			if (!aLeaf.getChildLeaves().isEmpty())
+			{	
+//				calcPosition(aLeaf.getChildLeaves().get(0));
+				int i=0;
+				for (Leaf childLeaf : aLeaf.getChildLeaves()) {
+					calcPosition(childLeaf, i);
+					
+					i++;
+				}
+				
+				int childsize = aLeaf.getChildLeaves().size();
+				int center = (aLeaf.getPosition().height * childsize + TreeLiteral.HEIGHT_INTERVAL * (childsize - 1)) / childsize;
+				y = y + center - (aLeaf.getPosition().height / 2);
+				aLeaf.setPosition(x, y);
+			}else{
+				return;
+			}
+		}
+		this.add(aLeaf);
+		aLeaf.outPosition();
+	}
 	/**
 	 * 指定されたグラフィクスに背景色（白色）でツリービュー全体を塗り、
 	 * その後にスクロール量（offset）を考慮してリーフとブランチを描画する。
@@ -54,15 +97,16 @@ public class TreeView extends mvc.View
 		height = this.getHeight();
 		aGraphics.setColor(Color.white);
 		aGraphics.fillRect(0, 0, width, height);
+		System.out.println(aTreeModel.getTree().getLeafList().size());
 		for ( Leaf aLeaf : aTreeModel.getTree().getLeafList() )
 		{
-			aLeaf.setDefaultPosition(n,offset.x,offset.y);
-			this.add(aLeaf);
+			if (aLeaf.isRoot()) {
+				aLeaf.setDefaultPosition(0, offset.x, offset.y);
+				calcPosition(aLeaf, 0);
+			} 
+//			aLeaf.setDefaultPosition(n,offset.x,offset.y);
+//			this.add(aLeaf);
 			n++;
-			for(Integer to:aLeaf.getNextNodeNumber())
-			{
-				
-			}
 	    }
 		for ( Branch aBranch : aTreeModel.getTree().getBranchList() )
 		{

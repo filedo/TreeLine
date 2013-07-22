@@ -19,14 +19,10 @@ public class TreeLiteral
 	 * ノードの縦の間隔を束縛するリテラル。
 	 */
 	static final int HEIGHT_INTERVAL = 2;
-	
+
 	/**
-	 * 描画中のモードを束縛するリテラル。
+	 * ノードの横の間隔を束縛するリテラル。
 	 */
-	static final int START = 0;
+	static final int WIDTH_INTERVAL = 25;
 	
-	/**
-	 * 描画完了のモードを束縛するリテラル。
-	 */
-	static final int END = 1;
 }

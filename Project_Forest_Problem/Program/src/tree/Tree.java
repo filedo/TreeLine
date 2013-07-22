@@ -29,26 +29,12 @@ public class Tree
     private Leaf aLeaf;
     
     /**
-     * 樹上整列の座標を束縛する。
-     */
-    private Point aPoint;
-    
-    /**
      * ツリーを作るコンストラクタ。
      */
     public Tree()
     {
     	aLeafList = new ArrayList<Leaf>();	
     	aBranchList = new ArrayList<Branch>();
-    }
-    
-    /**
-     * 樹上整列の座標を求める。
-     * @return
-     */
-    public Point treeDesign()
-    {
-    	return aPoint;
     }
     
     /**
