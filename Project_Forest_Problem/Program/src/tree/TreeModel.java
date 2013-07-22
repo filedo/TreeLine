@@ -34,35 +34,15 @@ public class TreeModel extends mvc.Model
     public TreeModel()
     {
         super();
-        mode=TreeLiteral.START;
         aTree=new Tree();
-        load();
+        this.load();
     }
     
     public void perform()
     {
     	return;
     }
-    
-    /**
-     * 現在のモードを応答する。
-     * @return
-     */
-    public int getMode()
-    {
-        return mode;
-    }
-    
-    /**
-     * 現在のモードを設定する。
-     * @param mode
-     */
-    public void setMode(int mode)
-    {
-        this.mode = mode;
-        return;
-    }
-    
+
     /**
      * 木を応答する。
      * @return
