@@ -19,11 +19,6 @@ import java.util.concurrent.CountDownLatch;
 public class TreeModel extends mvc.Model
 {
     /**
-     * 現在のモードを束縛する。
-     */
-    private int mode;
-    
-    /**
      * 木を束縛する。
      */
     private Tree aTree;
