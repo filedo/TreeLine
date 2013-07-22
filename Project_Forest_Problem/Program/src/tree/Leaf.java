@@ -187,7 +187,8 @@ public class Leaf extends JLabel implements MouseListener
     /**
      * 現在の位置を出力する。
      */
-    public void outPosition() {
+    public void outPosition() 
+    {
     	System.out.println("x="+this.getX()+" y="+this.getY()+" width="+this.getWidth()+" height="+this.getHeight()+" :"+nodeName);
     	return;
     }
