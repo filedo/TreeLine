@@ -165,11 +165,11 @@ public class Leaf extends JLabel implements MouseListener
     {
     	this.addDescendantMap(this, this.descendantLeaves);
     	// デバッグ用
-    	System.out.println("  " + this.nodeName);
-    	for (Map.Entry<String, Leaf> entry: this.descendantLeaves.entrySet())
-    	{
-    		System.out.println("   " + entry.getKey() + " : " + entry.getValue());
-		}
+//    	System.out.println("  " + this.nodeName);
+//    	for (Map.Entry<String, Leaf> entry: this.descendantLeaves.entrySet())
+//    	{
+//    		System.out.println("   " + entry.getKey() + " : " + entry.getValue());
+//		}
     }
     
     /**

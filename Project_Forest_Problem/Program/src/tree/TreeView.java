@@ -65,7 +65,7 @@ public class TreeView extends mvc.View
 		else
 		{	
 			// 親の位置を元に自分の位置を計算
-			System.out.println(aLeaf.getNodeName());
+//			System.out.println(aLeaf.getNodeName());
 			Leaf parentLeaf = aLeaf.getParentLeaf();
 			Rectangle parentLeafPos = parentLeaf.getPosition();
 			int x = parentLeafPos.x + parentLeafPos.width + TreeLiteral.WIDTH_INTERVAL;
@@ -75,7 +75,6 @@ public class TreeView extends mvc.View
 			
 			if (!aLeaf.getChildLeaves().isEmpty())
 			{	
-//				calcPosition(aLeaf.getChildLeaves().get(0));
 				// 子に対して再帰処理を行う。
 				int i=0;
 				for (Leaf childLeaf : aLeaf.getChildLeaves())
@@ -96,7 +95,7 @@ public class TreeView extends mvc.View
 			}
 		}
 		this.add(aLeaf);
-		aLeaf.outPosition();
+//		aLeaf.outPosition();
 	}
 	/**
 	 * 指定されたグラフィクスに背景色（白色）でツリービュー全体を塗り、
@@ -110,7 +109,6 @@ public class TreeView extends mvc.View
 		height = this.getHeight();
 		aGraphics.setColor(Color.white);
 		aGraphics.fillRect(0, 0, width, height);
-		System.out.println(aTreeModel.getTree().getLeafList().size());
 		for ( Leaf aLeaf : aTreeModel.getTree().getLeafList() )
 		{
 			if (aLeaf.isRoot()) {
