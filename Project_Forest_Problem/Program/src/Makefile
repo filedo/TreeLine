@@ -5,9 +5,15 @@ all:
 
 clean:
 	$(ANT) clean
+	
+treetest:
+	$(ANT) treetest
+    
+foresttest:
+	$(ANT) foresttest
 
-test:
-	$(ANT) test
+semilatticetest:
+	$(ANT) semilatticetest
 
 install:
 	$(ANT) install

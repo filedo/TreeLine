@@ -8,7 +8,7 @@
 	<property name="destdir" value="./Classes" />
 	<property name="docdir" value="./JavaDoc" />
 	<property name="instdir" value="./${ant.project.name}.app/Contents/Resources/Java" />
-	<property name="copyright" value="Copyright 2008-2012 AOKI Atsushi. All Right Reserved." />
+	<property name="copyright" value="Copyright 2008-2012 TreeLine. All Right Reserved." />
 	<property name="zipname" value="${ant.project.name}" />
 	
 	<tstamp>
@@ -66,12 +66,29 @@
         <echo>on ${date} at ${time}</echo>
 	</target>
 	
-	<target name="test" depends="all" description="test">
+	<target name="treetest" depends="all" description="tree.txt">
 		<exec executable="java" spawn="false">
 			<arg line="-Dfile.encoding=UTF-8 -Xmx512m -Xss1024k -jar ${package}.jar" />
+            <arg line="tree.txt"/>
 		</exec>
 		<echo>on ${date} at ${time}</echo>
 	</target>
+	    
+    <target name="foresttest" depends="all" description="forest.txt">
+        <exec executable="java" spawn="false">
+            <arg line="-Dfile.encoding=UTF-8 -Xmx512m -Xss1024k -jar ${package}.jar" />
+            <arg line="forest.txt"/>
+        </exec>
+        <echo>on ${date} at ${time}</echo>
+    </target>
+    
+    <target name="semilatticetest" depends="all" description="semilattice.txt">
+        <exec executable="java" spawn="false">
+            <arg line="-Dfile.encoding=UTF-8 -Xmx512m -Xss1024k -jar ${package}.jar" />
+            <arg line="semilattice.txt"/>
+        </exec>
+        <echo>on ${date} at ${time}</echo>
+    </target>
 	
 	<target name="install" depends="all" description="install into application">
 		<copy file="${package}.jar" todir="${instdir}"/>

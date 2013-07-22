@@ -23,18 +23,13 @@ public class TreeModel extends mvc.Model
     /**
      * インスタンスを生成して、テキストファイルを読み込む。
      */
-    public TreeModel()
+    public TreeModel(String fileName)
     {
         super();
         aTree=new Tree();
-        this.load();
+        this.load(fileName);
     }
-    
-    public void perform()
-    {
-    	return;
-    }
-
+  
     /**
      * 木を応答する。
      * @return
@@ -47,13 +42,13 @@ public class TreeModel extends mvc.Model
     /**
      * ファイルを読み込む。
      */
-    public void load()
+    public void load(String fileName)
     {
         //カレントディレクトリを取得 テスト用
         File currentDirectory = new File(".");
         System.out.println(currentDirectory.getAbsolutePath());
         
-        String inFileName = "Project_Forest_Problem/Requirement/texts/tree.txt";	 // 入力ファイル名
+        String inFileName = "Project_Forest_Problem/Requirement/texts/"+fileName;	 // 入力ファイル名
         
         try 
         {
@@ -153,7 +148,8 @@ public class TreeModel extends mvc.Model
                 }
             }
             // 子孫の情報を各葉に保存
-            for (Leaf aLeaf : aTree.getLeafList()) {
+            for (Leaf aLeaf : aTree.getLeafList()) 
+            {
             	aLeaf.setDescendantLeaves();
 			}
             br.close();

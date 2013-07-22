@@ -5,13 +5,18 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-
+/**
+ * TreeModel、TreeController、TreeViewクラスを作成。
+ * その後Windowを作成している。
+ */
 public class Example extends Object
 {
 	
 	public static void main(String[] args)
 	{
-		TreeModel aTreeModel = new TreeModel();
+		String fileName = args[0];  
+		
+		TreeModel aTreeModel = new TreeModel(fileName);
 		TreeController aTreeController = new TreeController();
 		TreeView aTreeView = new TreeView(aTreeModel, aTreeController);
 

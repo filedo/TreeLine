@@ -90,14 +90,15 @@ public class Leaf extends JLabel implements MouseListener
     public Leaf(Integer nodeNumber, String nodeName)
     {
     	this(nodeNumber, nodeName, null);
-    	System.out.println(nodeNumber + " " + nodeName +  "ノードの深さが未設定です。");
+//    	System.out.println(nodeNumber + " " + nodeName +  "ノードの深さが未設定です。");
     }
     
     /**
      * 葉に親がいるかいないかを尋ねる。
      * @return 親がいなければtrue居なければfalse
      */
-    public boolean isRoot() {
+    public boolean isRoot() 
+    {
     	return this.root;
     }
     
@@ -106,7 +107,8 @@ public class Leaf extends JLabel implements MouseListener
      * 親がいれば根では無いので、rootをfalseにする。
      * @param aLeaf 葉の親
      */
-    public void addParent(Leaf aLeaf) { 
+    public void addParent(Leaf aLeaf)
+    { 
     	this.parentLeaf = aLeaf;
     	this.root = false;
     }
@@ -124,7 +126,8 @@ public class Leaf extends JLabel implements MouseListener
      * 葉の親を返す
      * @return Leaf 葉の親
      */
-    public Leaf getParentLeaf() {
+    public Leaf getParentLeaf() 
+    {
     	return this.parentLeaf;
     }
     

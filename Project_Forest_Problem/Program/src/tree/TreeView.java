@@ -54,10 +54,12 @@ public class TreeView extends mvc.View
 		{	
 			if (!aLeaf.getChildLeaves().isEmpty())
 			{
+				int n=0;
 				// 不完全: 描画位置が正しくない
 				for (Leaf childLeaf : aLeaf.getChildLeaves()) 
 				{
-					calcPosition(childLeaf, 0);	
+					calcPosition(childLeaf, n);
+					n++;
 				}
 //				calcPosition(aLeaf.getChildLeaves().get(0), 0);
 			}
