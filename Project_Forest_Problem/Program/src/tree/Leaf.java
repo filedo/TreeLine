@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Font;
-import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -94,6 +93,10 @@ public class Leaf extends JLabel implements MouseListener
     	System.out.println(nodeNumber + " " + nodeName +  "ノードの深さが未設定です。");
     }
     
+    /**
+     * 葉に親がいるかいないかを尋ねる。
+     * @return 親がいなければtrue居なければfalse
+     */
     public boolean isRoot() {
     	return this.root;
     }
@@ -110,13 +113,17 @@ public class Leaf extends JLabel implements MouseListener
     
     /**
      * 葉に子の情報を追加する。
-     * @param leaf 葉の子
+     * @param aLeaf 葉の子
      */
     public void addChildLeaf(Leaf aLeaf)
     {
     	childLeaves.add(aLeaf);
     } 
     
+    /**
+     * 葉の親を返す
+     * @return Leaf 葉の親
+     */
     public Leaf getParentLeaf() {
     	return this.parentLeaf;
     }
@@ -246,6 +253,7 @@ public class Leaf extends JLabel implements MouseListener
     	this.nextNodeNumber.add(nextNodeNumber);
     	return;
     }
+    
     public ArrayList<Integer> getNextNodeNumber()
     {
     	return nextNodeNumber;

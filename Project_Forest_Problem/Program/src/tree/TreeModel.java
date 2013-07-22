@@ -7,11 +7,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
-import java.text.Normalizer.Form;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.TreeMap;
-import java.util.concurrent.CountDownLatch;
 
 /**
  * ツリーモデル。
@@ -155,35 +152,10 @@ public class TreeModel extends mvc.Model
                     aTree.addBranchList(aBranch);
                 }
             }
+            // 子孫の情報を各葉に保存
             for (Leaf aLeaf : aTree.getLeafList()) {
-//            	System.out.println("あああ");
             	aLeaf.setDescendantLeaves();
-				for (Leaf childLeaf : aLeaf.getChildLeaves()) {
-//					System.out.println(aLeaf.isRoot() + " "+ aLeaf.getNodeName() + " "+ childLeaf.getNodeName());
-				}
 			}
-//            for ( Integer key : nodesMap.keySet() )
-//            {
-//            	String nodeName = nodesMap.get( key );
-//                Integer nodeDepth = nodeDepthList.get(key-1);
-//                Leaf aLeaf=new Leaf(key,nodeName,nodeDepth);
-//                aTree.setLeaf(aLeaf);
-//                aTree.addLeafList(aLeaf);
-//            }
-//            for (Branch aBranch : aTree.getBranchList())
-//            {
-//            	Integer from = aBranch.getBranchFrom();
-//            	Integer to = aBranch.getBranchTo();
-////            	aTree.getLeafList().get(from).setNextNodeNumber(to);
-////            	System.out.println(from + " " + to);
-//            }
-            
-        /*    System.out.println
-            (aTree.getLeafList().get(4).getNodeNumber()+":"+
-             aTree.getLeafList().get(4).getNodeName()+":"+
-             aTree.getLeafList().get(4).getNodeDepth());
-            System.out.println
-           (aTree.getBranchList().get(4).getBranchFrom()+":"+aTree.getBranchList().get(4).getBranchTo());*/
             br.close();
             isr.close();
             fis.close();

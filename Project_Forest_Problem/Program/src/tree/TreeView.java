@@ -4,8 +4,6 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Rectangle;
-import java.awt.geom.Point2D;
-import java.awt.image.BufferedImage;
 
 /**
  * ツリービュー。
@@ -43,19 +41,30 @@ public class TreeView extends mvc.View
 		offset = new Point(0, 0);
 	}
 	
+	/**
+	 * 葉の位置を計算する再帰メソッド。不完全
+	 * TODO: TreeModelへ移動。アニメーション機能追加。
+	 * @param aLeaf 位置を計算する葉
+	 * @param count 何個目の子の葉か
+	 */
 	private void calcPosition(Leaf aLeaf, int count)
 	{
+		// 葉に親が居ない場合
 		if (aLeaf.isRoot())
 		{	
-			if (!aLeaf.getChildLeaves().isEmpty()) {
-//				for (Leaf childLeaf : aLeaf.getChildLeaves()) {
-//					calcPosition(childLeaf, 0);	
-//				}
-				calcPosition(aLeaf.getChildLeaves().get(0), 0);
+			if (!aLeaf.getChildLeaves().isEmpty())
+			{
+				// 不完全: 描画位置が正しくない
+				for (Leaf childLeaf : aLeaf.getChildLeaves()) 
+				{
+					calcPosition(childLeaf, 0);	
+				}
+//				calcPosition(aLeaf.getChildLeaves().get(0), 0);
 			}
 		}
 		else
 		{	
+			// 親の位置を元に自分の位置を計算
 			System.out.println(aLeaf.getNodeName());
 			Leaf parentLeaf = aLeaf.getParentLeaf();
 			Rectangle parentLeafPos = parentLeaf.getPosition();
@@ -63,21 +72,26 @@ public class TreeView extends mvc.View
 			int y = parentLeafPos.y + (parentLeafPos.height + TreeLiteral.HEIGHT_INTERVAL) * count;
 			aLeaf.setPosition(x, y);
 			this.add(aLeaf);
+			
 			if (!aLeaf.getChildLeaves().isEmpty())
 			{	
 //				calcPosition(aLeaf.getChildLeaves().get(0));
+				// 子に対して再帰処理を行う。
 				int i=0;
-				for (Leaf childLeaf : aLeaf.getChildLeaves()) {
+				for (Leaf childLeaf : aLeaf.getChildLeaves())
+				{
 					calcPosition(childLeaf, i);
-					
 					i++;
 				}
 				
+				// 子の位置を再計算したあと、自分の位置を再計算する。
 				int childsize = aLeaf.getChildLeaves().size();
 				int center = (aLeaf.getPosition().height * childsize + TreeLiteral.HEIGHT_INTERVAL * (childsize - 1)) / childsize;
 				y = y + center - (aLeaf.getPosition().height / 2);
 				aLeaf.setPosition(x, y);
-			}else{
+			}
+			else
+			{
 				return;
 			}
 		}
@@ -92,7 +106,6 @@ public class TreeView extends mvc.View
 	{
 		int width;
 		int height;
-		int n=0;
 		width = this.getWidth();
 		height = this.getHeight();
 		aGraphics.setColor(Color.white);
@@ -104,9 +117,6 @@ public class TreeView extends mvc.View
 				aLeaf.setDefaultPosition(0, offset.x, offset.y);
 				calcPosition(aLeaf, 0);
 			} 
-//			aLeaf.setDefaultPosition(n,offset.x,offset.y);
-//			this.add(aLeaf);
-			n++;
 	    }
 		for ( Branch aBranch : aTreeModel.getTree().getBranchList() )
 		{
