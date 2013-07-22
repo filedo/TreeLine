@@ -25,13 +25,4 @@ public class TreeLiteral
 	 */
 	static final int WIDTH_INTERVAL = 25;
 	
-	/**
-	 * 描画中のモードを束縛するリテラル。
-	 */
-	static final int START = 0;
-	
-	/**
-	 * 描画完了のモードを束縛するリテラル。
-	 */
-	static final int END = 1;
 }
