@@ -184,11 +184,19 @@ public class Leaf extends JLabel implements MouseListener
     	return this.descendantLeaves;
     }
     
+    /**
+     * 現在の位置を出力する。
+     */
     public void outPosition() {
     	System.out.println("x="+this.getX()+" y="+this.getY()+" width="+this.getWidth()+" height="+this.getHeight()+" :"+nodeName);
     	return;
     }
     
+    /**
+     * ノードの位置を設定する。
+     * @param x
+     * @param y
+     */
     public void setPosition(int x, int y)
     {	
     	this.setBounds(x ,y, this.getWidth(), this.getHeight());
@@ -216,7 +224,7 @@ public class Leaf extends JLabel implements MouseListener
     
     /**
      * ノードの名前を応答する。
-     * @return
+     * @return nodeName ノードの名前
      */
     public String getNodeName()
     {
@@ -234,7 +242,7 @@ public class Leaf extends JLabel implements MouseListener
     }
     /**
      * ノードの番号を応答する。
-     * @return
+     * @return nodeNumber ノードの番号
      */
     public Integer getNodeNumber() 
     {
@@ -249,22 +257,10 @@ public class Leaf extends JLabel implements MouseListener
     	this.nodeNumber = nodeNumber;
         return;
     }
-    
-    public void setNextNodeNumber(Integer nextNodeNumber)
-    {
-    	nextNodeNumber++;
-    	this.nextNodeNumber.add(nextNodeNumber);
-    	return;
-    }
-    
-    public ArrayList<Integer> getNextNodeNumber()
-    {
-    	return nextNodeNumber;
-    }
-    
+        
     /**
      * ノードの深さを応答する。
-     * @return
+     * @return nodeDepth ノードの深さ。
      */
 	public Integer getNodeDepth()
 	{

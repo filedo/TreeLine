@@ -48,7 +48,7 @@ public class Tree
     
     /**
      * 葉を応答する。
-     * @return
+     * @return aLeaf 葉
      */
     public Leaf getLeaf()
     {
@@ -67,7 +67,7 @@ public class Tree
     
     /**
      * 葉のリストを応答する。
-     * @return
+     * @return aLeafList 葉のリスト
      */
     public ArrayList<Leaf> getLeafList()
     {
@@ -76,7 +76,7 @@ public class Tree
     
     /**
      * 枝を応答する。
-     * @return
+     * @return aBranch 枝
      */
 	public Branch getBranch() 
 	{
@@ -95,7 +95,7 @@ public class Tree
 	
 	/**
 	 * 枝のリストを応答する。
-	 * @return
+	 * @return aBranchList 枝のリスト
 	 */
 	public ArrayList<Branch> getBranchList()
 	{

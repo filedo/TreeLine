@@ -32,7 +32,7 @@ public class TreeModel extends mvc.Model
   
     /**
      * 木を応答する。
-     * @return
+     * @return aTree 木
      */
     public Tree getTree()
     {
@@ -48,7 +48,7 @@ public class TreeModel extends mvc.Model
         File currentDirectory = new File(".");
         System.out.println(currentDirectory.getAbsolutePath());
         
-        String inFileName = "Project_Forest_Problem/Requirement/texts/"+fileName;	 // 入力ファイル名
+        String inFileName = "../../Requirement/texts/"+fileName;	 // 入力ファイル名
         
         try 
         {

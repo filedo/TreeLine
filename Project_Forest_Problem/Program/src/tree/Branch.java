@@ -27,7 +27,7 @@ public class Branch
     
     /**
      * 枝の根元を応答する。
-     * @return
+     * @return from 枝の根元
      */
     public Integer getBranchFrom()
     {
@@ -46,7 +46,7 @@ public class Branch
 
     /**
      * 枝の終端を応答する。
-     * @return
+     * @return to 枝の終端
      */
     public Integer getBranchTo()
     {

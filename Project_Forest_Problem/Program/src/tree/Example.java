@@ -6,12 +6,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
- * TreeModel、TreeController、TreeViewクラスを作成。
- * その後Windowを作成している。
+ * 例題プログラム。
  */
 public class Example extends Object
 {
-	
+	/**
+	 * TreeModel、TreeController、TreeViewクラスを作成。
+	 * その後Windowを作成している。
+	 */
 	public static void main(String[] args)
 	{
 		String fileName = args[0];  
