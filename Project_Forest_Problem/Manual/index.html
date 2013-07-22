@@ -249,9 +249,158 @@ th {
 <hr>
 <h2>ソフトウェア工学IIの小テスト「樹状整列」マニュアル</h2>
 <div class="belt">
-<h3><a name="KanseiSaseteKudasai">完成させてください</a></h3>
+<h3><a href="../Program/TreeLine.zip">プログラムのzipファイルをダウンロード</a></h3>
 </div>
+<div class="belt">
+<h3><a name="command">実行方法</a></h3>
+</div>
+<ol type="1">
+        <li>TreeLine.zipのアーカイブファイルを適当な場所に展開する。
+        <pre class="belt">$ unzip TreeLine.zip
+            Archive:  TreeLine.zip
+            creating: TreeLine/
+            creating: TreeLine/mvc/
+            creating: TreeLine/tree/
+            inflating: TreeLine/Makefile
+            inflating: TreeLine/build.xml
+            inflating: TreeLine/mvc.jar
+            inflating: TreeLine/mvc/Controller.java
+            inflating: TreeLine/mvc/Model.java
+            inflating: TreeLine/mvc/View.java
+            inflating: TreeLine/mvc/package-info.java
+            inflating: TreeLine/tree.mf
+            inflating: TreeLine/tree/Branch.java
+            inflating: TreeLine/tree/Example.java
+            inflating: TreeLine/tree/Leaf.java
+            inflating: TreeLine/tree/Tree.java
+            inflating: TreeLine/tree/TreeController.java
+            inflating: TreeLine/tree/TreeLiteral.java
+            inflating: TreeLine/tree/TreeModel.java
+            inflating: TreeLine/tree/TreeView.java
+            inflating: TreeLine/tree/package-info.java</pre>
+        <li>展開して得られるTreeLineというディレクトリへ移る。
+        <pre class="belt">$ cd TreeLine</pre>
+        <li>中身を確認する。
+        <pre class="belt">$ ls *
+            Makefile	build.xml	mvc.jar		tree.mf
+                        
+            mvc:
+            Controller.java		View.java
+            Model.java              package-info.java
+            
+            tree:
+            Branch.java		Tree.java               TreeModel.java
+            Example.java        TreeController.java     TreeView.java
+            Leaf.java		TreeLiteral.java        package-info.java</pre>
+        <li>makeする。
+        <pre class="belt">$ make
+            env LC_ALL=ja_JP.UTF-8 ant all
+            Picked up _JAVA_OPTIONS: -Dfile.encoding=utf8
+            Buildfile: /Users/shogo/git/SE_Projects/TreeLine/Project_Forest_Problem/Program/TreeLine/build.xml
+                            
+            prepare:
+            [mkdir] Created dir: /Users/shogo/git/SE_Projects/TreeLine/Project_Forest_Problem/Program/TreeLine/Classes
+            [echo] on 2013/07/23 at 01:00:44
+                            
+            compile:
+            [javac] Compiling 13 source files to /Users/shogo/git/SE_Projects/TreeLine/Project_Forest_Problem/Program/TreeLine/Classes
+            [javac] Picked up _JAVA_OPTIONS: -Dfile.encoding=utf8
+            [javac] Creating empty /Users/shogo/git/SE_Projects/TreeLine/Project_Forest_Problem/Program/TreeLine/Classes/mvc/package-info.class
+            [javac] Creating empty /Users/shogo/git/SE_Projects/TreeLine/Project_Forest_Problem/Program/TreeLine/Classes/tree/package-info.class
+            [echo] on 2013/07/23 at 01:00:44
+                            
+            jar:
+            [jar] Building jar: /Users/shogo/git/SE_Projects/TreeLine/Project_Forest_Problem/Program/TreeLine/tree.jar
+            [echo] on 2013/07/23 at 01:00:44
+                            
+            all:
+            [echo] on 2013/07/23 at 01:00:44
+            
+            BUILD SUCCESSFUL
+            Total time: 2 seconds</pre>
+            <li>tree.jarが生成されていることを確かめる。
+            <pre class="belt">ls *
+            Makefile	build.xml	mvc.jar		tree.jar	tree.mf
+                
+            Classes:
+            mvc	tree
+                                
+            mvc:
+            Controller.java		View.java
+            Model.java              package-info.java
+                
+            tree:
+            Branch.java		Tree.java               TreeModel.java
+            Example.java        TreeController.java     TreeView.java
+            Leaf.java		TreeLiteral.java        package-info.java
+        </pre>
+</ol>
+    <div class="belt">
+        <h3><a name="Execution">実行方法</a>（実行ファイルの動かし方）</h3>
+    </div>
+    <p>実行するためのコマンドは以下の通りである。</p>
+    <blockquote><code>make treetest</code></blockquote>
+    <p>tree.txtのファイルを読み込む。</p>
+    <blockquote><code>make foresttest</code></blockquote>
+    <p>forest.txtのファイルを読み込む。</p>
+    <blockquote><code>make semilatticetest</code></blockquote>
+    <p>semilattice.txtのファイルを読み込む。</p>
+    <p>以下に実行例を示す。</p>
+    <blockquote><code>make treetestの場合</code></blockquote>
+    <blockquote>
+        <table class="belt" summary="table">
+            <tbody>
+                <tr>
+                    <td>
+                        <table class="content" summary="table">
+                            <tbody>
+                                <tr>
+                                    <td class="center-small"><a href="./tree.jpg"><img class="borderless" src="./tree.jpg" width="620" height="450"></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </blockquote>
+        <blockquote><code>make foresttestの場合</code></blockquote>
+     <blockquote>
+        <table class="belt" summary="table">
+            <tbody>
+                <tr>
+                    <td>
+                        <table class="content" summary="table">
+                            <tbody>
+                                <tr>
+                                    <td class="center-small"><a href="./forest.jpg"><img class="borderless" src="./forest.jpg" width="620" height="450"></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </blockquote>
+        <blockquote><code>make semilatticetestの場合</code></blockquote>
+     <blockquote>
+        <table class="belt" summary="table">
+            <tbody>
+                <tr>
+                    <td>
+                        <table class="content" summary="table">
+                            <tbody>
+                                <tr>
+                                    <td class="center-small"><a href="./semilattice.jpg"><img class="borderless" src="./semilattice.jpg" width="620" height="450"></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </blockquote>
 <hr>
-<div class="right-small">Copyright 20xx Project xx, Updated: 2013/02/27 (Created: 2009/11/11)</div>
+<div class="right-small">Copyright 2013 Project TreeLine, Updated: 2013/07/23 (Created: 2009/11/11)</div>
 </body>
 </html>

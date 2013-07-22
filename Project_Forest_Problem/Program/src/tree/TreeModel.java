@@ -48,7 +48,8 @@ public class TreeModel extends mvc.Model
         File currentDirectory = new File(".");
         System.out.println(currentDirectory.getAbsolutePath());
         
-        String inFileName = "../../Requirement/texts/"+fileName;	 // 入力ファイル名
+        // 入力ファイル名
+        String inFileName = "../../Requirement/texts/"+fileName;
         
         try 
         {
