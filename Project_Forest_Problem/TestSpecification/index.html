@@ -230,7 +230,7 @@
                                             -->
                                             </style>
                                         <title>ソフトウェア工学IIの小テスト「樹状整列」テスト仕様書</title>
-                                        </head>
+    </head>
     <body>
         <div id="menu">
             <ul>
@@ -259,7 +259,7 @@
                 <li><a href="#Tree">Tree</a>（ツリー）</li>
                 <li><a href="#Leaf">Leaf</a>（リーフ）</li>
                 <li><a href="#Branch">Branch</a>（ブランチ）</li>
-                </ul>
+        </ul>
         <div class="belt">
             <h3><a name="Example" href="../Program/index.html#Example">Example（メインクラス）</a></h3>
         </div>
@@ -306,9 +306,9 @@
                                     <td class="left-padding"><code><a href="../Program/index.html#Example-main">main(String[] args)</a></code></td>
                                     <td class="left-padding"><code>void</code></td>
                                     <td class="left-padding"><code>public static</code></td>
-                                    <td class="left-padding">コマンドラインを引数として受け取り、…、…。</td>
-                                    <td class="left-padding">バグ（2010年7月21日）</td>
-                                    <td class="left-padding">良好（2010年7月21日）</td>
+                                    <td class="left-padding">TreeModel、TreeController、TreeViewクラスを作成。
+                                        その後Windowを作成している。</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -333,18 +333,11 @@
                                     <th class="left-padding" abbr="5">テスト結果</th>
                                 </tr>
                                 <tr>
-                                    <td class="left-padding"><code>mode</code></td>
-                                    <td class="left-padding"><code>int</code></td>
-                                    <td class="left-padding"><code>privare</code></td>
-                                    <td class="left-padding">現在のモードを束縛する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
-                                </tr>
-                                <tr>
                                     <td class="left-padding"><code>aTree</code></td>
                                     <td class="left-padding"><code>Tree</code></td>
                                     <td class="left-padding"><code>private</code></td>
                                     <td class="left-padding">木を束縛する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -366,46 +359,25 @@
                                     <th class="left-padding" abbr="5">テスト結果</th>
                                 </tr>
                                 <tr>
-                                    <td class="left-padding"><code><a href="../Program/index.html#TreeModel-TreeModel">TreeModel()</a></code></td>
+                                    <td class="left-padding"><code><a href="../Program/index.html#TreeModel-TreeModel">TreeModel(String fileName)</a></code></td>
                                     <td class="left-padding"><code>instance</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">インスタンスを生成して、テキストファイルを読み込む。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
-                                </tr>
-                                <tr>
-                                    <td class="left-padding"><code><a href="../Program/index.html#TreeModel-perform">perform</a></code></td>
-                                    <td class="left-padding"><code>void</code></td>
-                                    <td class="left-padding"><code>public</code></td>
-                                    <td class="left-padding"></td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
-                                </tr>
-                                <tr>
-                                    <td class="left-padding"><code><a href="../Program/index.html#TreeModel-getMode">getMode()</a></code></td>
-                                    <td class="left-padding"><code>int</code></td>
-                                    <td class="left-padding"><code>public</code></td>
-                                    <td class="left-padding">現在のモードを応答する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
-                                </tr>
-                                <tr>
-                                    <td class="left-padding"><code><a href="../Program/index.html#TreeModel-setMode">setMode(int mode)</a></code></td>
-                                    <td class="left-padding"><code>void</code></td>
-                                    <td class="left-padding"><code>public</code></td>
-                                    <td class="left-padding">現在のモードを設定する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#TreeModel-getTree">getTree()</a></code></td>
                                     <td class="left-padding"><code>Tree</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">木を応答する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#TreeModel-load">load()</a></code></td>
                                     <td class="left-padding"><code>void</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">ファイルを読み込む。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -434,21 +406,21 @@
                                     <td class="left-padding"><code>TreeModel</code></td>
                                     <td class="left-padding"><code>protected</code></td>
                                     <td class="left-padding">TreeModelを束縛する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code>aTreeController</code></td>
                                     <td class="left-padding"><code>TreeController</code></td>
                                     <td class="left-padding"><code>protected</code></td>
                                     <td class="left-padding">TreeControllerを束縛する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code>offset</code></td>
                                     <td class="left-padding"><code>Point</code></td>
                                     <td class="left-padding"><code>private</code></td>
                                     <td class="left-padding">スクロール量としてPointのインスタンスを束縛する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -474,35 +446,42 @@
                                     <td class="left-padding"><code>instance</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">インスタンスを生成して応答する。指定されたツリーモデルの依存物となり、ツリーコントローラを作り、ツリーモデルとツリービューを設定し、スクロール量を(0, 0)に設定する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
+                                </tr>
+				 <tr>
+                                    <td class="left-padding"><code><a href="../Program/index.html#TreeView-calcPosition">calcPosition(Leaf aLeaf, int count)</a></code></td>
+                                    <td class="left-padding"><code>void</code></td>
+                                    <td class="left-padding"><code>private</code></td>
+                                    <td class="left-padding">葉の位置を計算する再帰メソッド。(不完全)</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#TreeView-paintComponent">paintComponent(Graphics aGraphics)</a></code></td>
                                     <td class="left-padding"><code>void</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">指定されたグラフィクスに背景色（白色）でツリービュー全体を塗り、その後にスクロール量（offset）を考慮してリーフとブランチを描画する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#TreeView-scrollAmount">scrollAmount()</a></code></td>
                                     <td class="left-padding"><code>Point</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">スクロール量（offsetの逆向きの大きさ）を応答する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#TreeView-scrollBy">scrollBy(Point aPoint)</a></code></td>
                                     <td class="left-padding"><code>void</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">スクロール量を指定された座標分だけ相対スクロールする。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#TreeView-scrollTo">scrollTo(Point aPoint)</a></code></td>
                                     <td class="left-padding"><code>void</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">スクロール量を指定された座標に設定（絶対スクロール）する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -531,28 +510,28 @@
                                     <td class="left-padding"><code>TreeModel</code></td>
                                     <td class="left-padding"><code>protected</code></td>
                                     <td class="left-padding">TreeModelを束縛する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code>aTreeView</code></td>
                                     <td class="left-padding"><code>TreeView</code></td>
                                     <td class="left-padding"><code>protected</code></td>
                                     <td class="left-padding">TreeViewを束縛する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code>previous</code></td>
                                     <td class="left-padding"><code>Point</code></td>
                                     <td class="left-padding"><code>private</code></td>
                                     <td class="left-padding">以前にマウスのボタンが押下された場所をPointのインスタンスとして束縛する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code>current</code></td>
                                     <td class="left-padding"><code>Point</code></td>
                                     <td class="left-padding"><code>private</code></td>
                                     <td class="left-padding">現在にマウスのボタンが押下された場所をPointのインスタンスとして束縛する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -578,49 +557,49 @@
                                     <td class="left-padding"><code>instance</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">インスタンスを生成して応答する。すべてのインスタンス変数（aTreeModel, aTreeView, previous, current）をnull化する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#TreeController-mouseClicked">mouseClicked(MouseEvent aMouseEvent)</a></code></td>
                                     <td class="left-padding"><code>void</code></td>
                                     <td class="left-padding"><code>public</code></td>
-                                    <td class="left-padding">指定されたマウスイベントからマウスカーサの位置を獲得して、モデル座標系でのクリック位置を割り出して標準出力に出力する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">指定されたマウスイベントからマウスカーサの位置を獲得して、モデル座標系でのクリック位置を割り出す。</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#TreeController-mouseDragged">mouseDragged(MouseEvent aMouseEvent)</a></code></td>
                                     <td class="left-padding"><code>void</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">マウスカーサの形状を移動の形に変化させ、指定されたマウスイベントからマウスカーサの位置を獲得して、インスタンス変数currentに設定すると共に、以前のマウスカーサの位置からの差分を計算する。そして、その差分だけビューに対してスクロールを依頼し、その後にビューの再描画を依頼する。最後にインスタンス変数previousをインスタンス変数currentに更新する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#TreeController-mousePressed">mousePressed(MouseEvent aMouseEvent)</a></code></td>
                                     <td class="left-padding"><code>void</code></td>
                                     <td class="left-padding"><code>public</code></td>
-                                    <td class="left-padding">マウスカーサの形状を十字に変化させ、指定されたマウスイベントからマウスカーサの位置を獲得して、インスタンス変数currentに設定する共にインスタンス変数previousをインスタンス変数currentに更新する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">マウスカーサの形状を十字に変化させ、指定されたマウスイベントからマウスカーサの位置を獲得して、インスタンス変数currentに設定すると共にインスタンス変数previousをインスタンス変数currentに更新する。</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#TreeController-mouseReleased">mouseReleased(MouseEvent aMouseEvent)</a></code></td>
                                     <td class="left-padding"><code>void</code></td>
                                     <td class="left-padding"><code>public</code></td>
-                                    <td class="left-padding">マウスカーサの形状をデフォルトに戻し、指定されたマウスイベントからマウスカーサの位置を獲得して、インスタンス変数currentに設定する共にインスタンス変数previousをインスタンス変数currentに更新する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">マウスカーサの形状をデフォルトに戻し、指定されたマウスイベントからマウスカーサの位置を獲得して、インスタンス変数currentに設定すると共にインスタンス変数previousをインスタンス変数currentに更新する。</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#TreeController-setModel">setModel(TreeModel aTreeModel)</a></code></td>
                                     <td class="left-padding"><code>void</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">指定されたモデルをインスタンス変数TreeModelに設定する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#TreeController-setView">setView(TreeView aTreeView)</a></code></td>
                                     <td class="left-padding"><code>void</code></td>
                                     <td class="left-padding"><code>public</code></td>
-                                    <td class="left-padding">指定されたビューをインスタンス変数aViewに設定し、ツリービューのマウスのリスナおよびモーションリスナそしてホイールリスナをこのコントローラにする。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">指定されたビューをインスタンス変数aTreeViewに設定し、ツリービューのマウスのリスナおよびモーションリスナそしてホイールリスナをこのコントローラにする。</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -649,35 +628,28 @@
                                     <td class="left-padding"><code>final int</code></td>
                                     <td class="left-padding"><code>static</code></td>
                                     <td class="left-padding">フォントのサイズを束縛するリテラル。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code>BORDERLINE_SIZE</code></td>
                                     <td class="left-padding"><code>final int</code></td>
                                     <td class="left-padding"><code>static</code></td>
                                     <td class="left-padding">ノードの枠線のサイズを束縛するリテラル。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code>HEIGHT_INTERVAL</code></td>
                                     <td class="left-padding"><code>final int</code></td>
                                     <td class="left-padding"><code>static</code></td>
                                     <td class="left-padding">ノードの縦の間隔を束縛するリテラル。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
-                                    <td class="left-padding"><code>START</code></td>
+                                    <td class="left-padding"><code>WIDTH_INTERVAL</code></td>
                                     <td class="left-padding"><code>final int</code></td>
                                     <td class="left-padding"><code>static</code></td>
-                                    <td class="left-padding">描画中のモードを束縛するリテラル。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
-                                </tr>
-                                <tr>
-                                    <td class="left-padding"><code>END</code></td>
-                                    <td class="left-padding"><code>final int</code></td>
-                                    <td class="left-padding"><code>static</code></td>
-                                    <td class="left-padding">描画完了のモードを束縛するリテラル。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">ノードの横の間隔を束縛するリテラル。</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -707,37 +679,30 @@
                                     <td class="left-padding"><code>ArrayList&lt;Leaf&gt;</code></td>
                                     <td class="left-padding"><code>private</code></td>
                                     <td class="left-padding">Leafのインスタンスたちを束縛する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code>aBranchList</code></td>
                                     <td class="left-padding"><code>ArrayList&lt;Branch&gt;</code></td>
                                     <td class="left-padding"><code>private</code></td>
                                     <td class="left-padding">Branchのインスタンスたちを束縛する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code>aBranch</code></td>
                                     <td class="left-padding"><code>Branch</code></td>
                                     <td class="left-padding"><code>private</code></td>
                                     <td class="left-padding">枝を束縛する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code>aLeaf</code></td>
                                     <td class="left-padding"><code>Leaf</code></td>
                                     <td class="left-padding"><code>private</code></td>
                                     <td class="left-padding">葉を束縛する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
-                                <tr>
-                                    <td class="left-padding"><code>aPoint</code></td>
-                                    <td class="left-padding"><code>Point</code></td>
-                                    <td class="left-padding"><code>private</code></td>
-                                    <td class="left-padding">樹上整列の座標を束縛する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
-                                </tr>
-                                
+
                             </tbody>
                         </table>
                     </td>
@@ -762,72 +727,64 @@
                                     <td class="left-padding"><code>instance</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">ツリーを作るコンストラクタ。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
-                                </tr>
-                                <tr>
-                                    <td class="left-padding"><code><a href="../Program/index.html#Tree-treeDesign">treeDesign()</a></code></td>
-                                    <td class="left-padding"><code>Point</code></td>
-                                    <td class="left-padding"><code>public</code></td>
-                                    <td class="left-padding">樹上整列の座標を求める。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#Tree-setLeaf">setLeaf(Leaf aLeaf)</a></code></td>
                                     <td class="left-padding"><code>void</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">葉を設定する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#Tree-getLeaf">getLeaf()</a></code></td>
                                     <td class="left-padding"><code>Leaf</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">葉を応答する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#Tree-addLeafList">addLeafList(Leaf aLeaf)</a></code></td>
                                     <td class="left-padding"><code>void</code></td>
                                     <td class="left-padding"><code>public</code></td>
-                                    <td class="left-padding">葉のリストを設定する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">葉をリストに追加する。</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#Tree-getLeafList">getLeafList()</a></code></td>
                                     <td class="left-padding"><code>ArrayList&lt;Leaf&gt;</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">葉のリストを応答する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
-                                </tr>
-                                <tr>
-                                    <td class="left-padding"><code><a href="../Program/index.html#Tree-setBranch">setBranch(Branch aBranch)</a></code></td>
-                                    <td class="left-padding"><code>void</code></td>
-                                    <td class="left-padding"><code>public</code></td>
-                                    <td class="left-padding">枝を設定する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#Tree-getBranch">getBranch()</a></code></td>
                                     <td class="left-padding"><code>Branch</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">枝を応答する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
-                                    <td class="left-padding"><code><a href="../Program/index.html#Tree-addBranchList">addBranchList(Branch aBranch)</a></code></td>
+                                    <td class="left-padding"><code><a href="../Program/index.html#Tree-setBranch">setBranch(Branch aBranch)</a></code></td>
                                     <td class="left-padding"><code>void</code></td>
                                     <td class="left-padding"><code>public</code></td>
-                                    <td class="left-padding">枝のリストを設定する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
-                                </tr>
+                                    <td class="left-padding">枝を設定する。</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
+                                </tr>                              
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#Tree-getBranchList">getBranchList()</a></code></td>
                                     <td class="left-padding"><code>ArrayList&lt;Branch&gt;</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">枝のリストを応答する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
-                                
+				 <tr>
+                                    <td class="left-padding"><code><a href="../Program/index.html#Tree-addBranchList">addBranchList(Branch aBranch)</a></code></td>
+                                    <td class="left-padding"><code>void</code></td>
+                                    <td class="left-padding"><code>public</code></td>
+                                    <td class="left-padding">枝をリストに追加する。</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
+                                </tr>
                             </tbody>
                         </table>
                     </td>
@@ -856,22 +813,59 @@
                                     <td class="left-padding"><code>String</code></td>
                                     <td class="left-padding"><code>private</code></td>
                                     <td class="left-padding">ノードの名前を束縛する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code>nodeNumber</code></td>
                                     <td class="left-padding"><code>Integer</code></td>
                                     <td class="left-padding"><code>private</code></td>
                                     <td class="left-padding">ノードの番号を束縛する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code>nodeDepth</code></td>
                                     <td class="left-padding"><code>Integer</code></td>
                                     <td class="left-padding"><code>private</code></td>
                                     <td class="left-padding">ノードの深さを束縛する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
+                                <tr>
+                                    <td class="left-padding"><code>nextNodeNumber</code></td>
+                                    <td class="left-padding"><code>ArrayList&lt;Integer&gt;</code></td>
+                                    <td class="left-padding"><code>private</code></td>
+                                    <td class="left-padding">次のノードの番号を束縛する。</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
+                                </tr>
+                                <tr>
+                                    <td class="left-padding"><code>root</code></td>
+                                    <td class="left-padding"><code>boolean</code></td>
+                                    <td class="left-padding"><code>private</code></td>
+                                    <td class="left-padding">葉に親がいるかどうか。</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
+                                </tr>
+                                <tr>
+                                    <td class="left-padding"><code>parentLeaf</code></td>
+                                    <td class="left-padding"><code>Leaf</code></td>
+                                    <td class="left-padding"><code>private</code></td>
+                                    <td class="left-padding">親を束縛する。</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
+                                </tr>
+                                <tr>
+                                    <td class="left-padding"><code>childLeaves</code></td>
+                                    <td class="left-padding"><code>ArrayList&lt;Leaf&gt;</code></td>
+                                    <td class="left-padding"><code>private</code></td>
+                                    <td class="left-padding">子を束縛する。</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="left-padding"><code>descendantLeaves</code></td>
+                                    <td class="left-padding"><code>TreeMap&lt;String, Leaf&gt;</code></td>
+                                    <td class="left-padding"><code>private</code></td>
+                                    <td class="left-padding">子孫を束縛するTreeMap&lt;String:葉の名前, Leaf:葉&gt;</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
+                                </tr>
+
                             </tbody>
                         </table>
                     </td>
@@ -892,95 +886,182 @@
                                     <th class="left-padding" abbr="5">テスト結果</th>
                                 </tr>
                                 <tr>
-                                    <td class="left-padding"><code><a href="../Program/index.html#Leaf-Leaf">Leaf()</a></code></td>
+                                    <td class="left-padding"><code><a href="../Program/index.html#Leaf-Leaf">Leaf(Integer nodeNumber,String nodeNumber, Integer nodeDepth)</a></code></td>
                                     <td class="left-padding"><code>instance</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">ノードの番号、名前、深さを指定して葉を作るコンストラクタ。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
+                                </tr>
+                                <tr>
+                                    <td class="left-padding"><code><a href="../Program/index.html#Leaf-Leaf-Leaf">Leaf(Integer nodeNumber,String nodeNumber)</a></code></td>
+                                    <td class="left-padding"><code>instance</code></td>
+                                    <td class="left-padding"><code>public</code></td>
+                                    <td class="left-padding">ノードの番号、名前を指定して葉を作るコンストラクタ。
+                                        ノードの深さを指定しない。</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
+                                </tr>
+                                <tr>
+                                    <td class="left-padding"><code><a href="../Program/index.html#Leaf-isRoot">isRoot()</a></code></td>
+                                    <td class="left-padding"><code>boolean</code></td>
+                                    <td class="left-padding"><code>public</code></td>
+                                    <td class="left-padding">葉に親がいるかいないかを尋ねる。</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
+                                </tr>  
+                                <tr>
+                                    <td class="left-padding"><code><a href="../Program/index.html#Leaf-addParent">addParent(Leaf aLeaf)</a></code></td>
+                                    <td class="left-padding"><code>void</code></td>
+                                    <td class="left-padding"><code>public</code></td>
+                                    <td class="left-padding">葉に親を束縛する。親がいれば根では無いので、rootをfalseにする。</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
+                                </tr>
+                                <tr>
+                                    <td class="left-padding"><code><a href="../Program/index.html#Leaf-addChildLeaf">addChildLeaf(Leaf aLeaf)</a></code></td>
+                                    <td class="left-padding"><code>void</code></td>
+                                    <td class="left-padding"><code>public</code></td>
+                                    <td class="left-padding">葉に子の情報を追加する。</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
+                                </tr>
+          
+                                <tr>
+                                    <td class="left-padding"><code><a href="../Program/index.html#Leaf-getParentLeaf">getParentLeaf()</a></code></td>
+                                    <td class="left-padding"><code>Leaf</code></td>
+                                    <td class="left-padding"><code>public</code></td>
+                                    <td class="left-padding">葉の親を返す。</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
+                                </tr>
+                                <tr>
+                                    <td class="left-padding"><code><a href="../Program/index.html#Leaf-getChildLeaves">getChildLeaves()</a></code></td>
+                                    <td class="left-padding"><code>ArrayList&lt;Leaf&gt;</code></td>
+                                    <td class="left-padding"><code>public</code></td>
+                                    <td class="left-padding">子の情報を返す。</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
+                                </tr>
+                                <tr>
+                                    <td class="left-padding"><code><a href="../Program/index.html#Leaf-addDescendantMap">addDescendantMap(Leaf aLeaf, TreeMap&lt;String, Leaf&gt; descendantLeaves)</a></code></td>
+                                    <td class="left-padding"><code>void</code></td>
+                                    <td class="left-padding"><code>private</code></td>
+                                    <td class="left-padding">ある葉が持つ子孫を全てTreeMapに登録するための再帰メソッド。</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
+                                </tr>
+                                <tr>
+                                    <td class="left-padding"><code><a href="../Program/index.html#Leaf-setDescendantLeaves">setDescendantLeaves()</a></code></td>
+                                    <td class="left-padding"><code>void</code></td>
+                                    <td class="left-padding"><code>public</code></td>
+                                    <td class="left-padding">葉が持つ子孫を葉の名前をキーとし、葉を値としてTreeMapに追加する。
+                                    葉に子供の情報を持たせてから呼ぶ。</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
+                                </tr>
+                                <tr>
+                                    <td class="left-padding"><code><a href="../Program/index.html#Leaf-getDescendantLeaves">getDescendantLeaves()</a></code></td>
+                                    <td class="left-padding"><code>TreeMap&lt;String, Leaf&gt;</code></td>
+                                    <td class="left-padding"><code>public</code></td>
+                                    <td class="left-padding">この葉の子孫を取得する。</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
+                                </tr>
+                                <tr>
+                                    <td class="left-padding"><code><a href="../Program/index.html#Leaf-outPosition">outPosition()</a></code></td>
+                                    <td class="left-padding"><code>void</code></td>
+                                    <td class="left-padding"><code>public</code></td>
+                                    <td class="left-padding">現在の位置を出力する。</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
+                                </tr>
+                                <tr>
+                                    <td class="left-padding"><code><a href="../Program/index.html#Leaf-setPosition">setPosition(int x,int y)</a></code></td>
+                                    <td class="left-padding"><code>void</code></td>
+                                    <td class="left-padding"><code>public</code></td>
+                                    <td class="left-padding">ノードの位置を設定する。</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#Leaf-setDefaultPosition">setDefaultPosition(int n,int x,int y)</a></code></td>
                                     <td class="left-padding"><code>void</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">樹上整列前のノードの位置を設定する。nはノード数。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
+                                </tr>
+                                <tr>
+                                    <td class="left-padding"><code><a href="../Program/index.html#Leaf-getPosition">getPosition()</a></code></td>
+                                    <td class="left-padding"><code>Rectangle</code></td>
+                                    <td class="left-padding"><code>public</code></td>
+                                    <td class="left-padding">ノードの位置を応答する。</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#Leaf-getNodeName">getNodeName()</a></code></td>
                                     <td class="left-padding"><code>String</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">ノードの名前を応答する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#Leaf-setNodeName">setNodeName(String nodeName)</a></code></td>
                                     <td class="left-padding"><code>void</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">ノードの名前を設定する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#Leaf-getNodeNumber">getNodeNumber()</a></code></td>
                                     <td class="left-padding"><code>Integer</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">ノードの番号を応答する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#Leaf-setNodeNumber">setNodeNumber(Integer nodeNumber)</a></code></td>
                                     <td class="left-padding"><code>void</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">ノードの番号を設定する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#Leaf-getNodeDepth">getNodeDepth()</a></code></td>
                                     <td class="left-padding"><code>Integer</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">ノードの深さを応答する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#Leaf-setNodeDepth">setNodeDepth(Integer nodeDepth)</a></code></td>
                                     <td class="left-padding"><code>void</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">ノードの深さを設定する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#Leaf-mouseClicked">mouseClicked(MouseEvent aMouseEvent)</a></code></td>
                                     <td class="left-padding"><code>void</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">ノードの名前を標準出力する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#Leaf-mouseExited">mouseExited(MouseEvent aMouseEvent)</a></code></td>
                                     <td class="left-padding"><code>void</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">何もしない。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#Leaf-mousePressed">mousePressed(MouseEvent aMouseEvent)</a></code></td>
                                     <td class="left-padding"><code>void</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">マウスカーサの形状をデフォルトに戻す。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#Leaf-mouseReleased">mouseReleased(MouseEvent aMouseEvent)</a></code></td>
                                     <td class="left-padding"><code>void</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">マウスカーサの形状を手に変化させる。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#Leaf-mouseEntered">mouseEntered(MouseEvent aMouseEvent)</a></code></td>
                                     <td class="left-padding"><code>void</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">マウスカーサの形状を手に変化させる。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1005,18 +1086,18 @@
                                     <th class="left-padding" abbr="5">テスト結果</th>
                                 </tr>
                                 <tr>
-                                    <td class="left-padding"><code>Integer</code></td>
                                     <td class="left-padding"><code>from</code></td>
+                                    <td class="left-padding"><code>Integer</code></td>
                                     <td class="left-padding"><code>private</code></td>
                                     <td class="left-padding">枝の根元を束縛する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
-                                    <td class="left-padding"><code>Integer</code></td>
                                     <td class="left-padding"><code>to</code></td>
+                                    <td class="left-padding"><code>Integer</code></td>
                                     <td class="left-padding"><code>private</code></td>
                                     <td class="left-padding">枝の終端を束縛する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1024,7 +1105,7 @@
                 </tr>
             </tbody>
         </table>
-        <table summary="table">
+	<table summary="table">
             <tbody>
                 <tr>
                     <td>
@@ -1042,56 +1123,35 @@
                                     <td class="left-padding"><code>instance</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">始点と終点を指定してブランチを作るコンストラクタ。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#Branch-getBranchFrom">getBranchFrom()</a></code></td>
                                     <td class="left-padding"><code>Integer</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">枝の根元を応答する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
-                                    <td class="left-padding"><code><a href="../Program/index.html#Branch-setBranchFrom">setBranchFrom(Branch aBranch)</a></code></td>
+                                    <td class="left-padding"><code><a href="../Program/index.html#Branch-setBranchFrom">setBranchFrom(Integer from)</a></code></td>
                                     <td class="left-padding"><code>void</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">枝の根元を設定する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#Branch-getBranchTo">getBranchTo()</a></code></td>
-                                    <td class="left-padding"><code>Branch</code></td>
+                                    <td class="left-padding"><code>Integer</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">枝の終端を応答する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                                 <tr>
                                     <td class="left-padding"><code><a href="../Program/index.html#Branch-setBranchTo">setBranchTo(Integer to)</a></code></td>
                                     <td class="left-padding"><code>void</code></td>
                                     <td class="left-padding"><code>public</code></td>
                                     <td class="left-padding">枝の終端を設定する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
-                                </tr>
-                                <tr>
-                                    <td class="left-padding"><code><a href="../Program/index.html#Tree-getLeafList">getLeafList()</a></code></td>
-                                    <td class="left-padding"><code>ArrayList&lt;Leaf&gt;</code></td>
-                                    <td class="left-padding"><code>public</code></td>
-                                    <td class="left-padding">葉のリストを応答する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
-                                </tr>
-                                <tr>
-                                    <td class="left-padding"><code><a href="../Program/index.html#Tree-setBranch">setBranch(Branch aBranch)</a></code></td>
-                                    <td class="left-padding"><code>void</code></td>
-                                    <td class="left-padding"><code>public</code></td>
-                                    <td class="left-padding">枝を設定する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
-                                </tr>
-                                <tr>
-                                    <td class="left-padding"><code><a href="../Program/index.html#Tree-getBranch">getBranch()</a></code></td>
-                                    <td class="left-padding"><code>Branch</code></td>
-                                    <td class="left-padding"><code>public</code></td>
-                                    <td class="left-padding">枝を応答する。</td>
-                                    <td class="left-padding">良好（2010年7月25日）</td>
+                                    <td class="left-padding">未実施（2013年7月23日）</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1099,7 +1159,7 @@
                 </tr>
             </tbody>
         </table>
-        <hr>
-        <div class="right-small">Copyright 2013 Project TreeLine, Updated: 2013/07/11 (Created: 2009/11/11)</div>
+	<hr>
+        <div class="right-small">Copyright 2013 Project TreeLine, Updated: 2013/07/23 (Created: 2009/11/11)</div>
     </body>
 </html>

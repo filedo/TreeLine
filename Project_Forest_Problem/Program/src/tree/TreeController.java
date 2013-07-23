@@ -45,8 +45,7 @@ public class TreeController extends mvc.Controller
 	}
 		
 	/**
-	 * 指定されたマウスイベントからマウスカーサの位置を獲得して、モデル座標系でのクリック位置を割り出して、
-	 * Leafに位置座標の情報を送信する。
+	 * 指定されたマウスイベントからマウスカーサの位置を獲得して、モデル座標系でのクリック位置を割り出す。
 	 */
 	public void mouseClicked(MouseEvent aMouseEvent)
 	{
@@ -78,7 +77,7 @@ public class TreeController extends mvc.Controller
 	
 	/**
 	 * マウスカーサの形状を十字に変化させ、指定されたマウスイベントからマウスカーサの位置を獲得して、
-	 * インスタンス変数currentに設定する共にインスタンス変数previousをインスタンス変数currentに更新する。
+	 * インスタンス変数currentに設定すると共にインスタンス変数previousをインスタンス変数currentに更新する。
 	 */
 	public void mousePressed(MouseEvent aMouseEvent)
 	{
@@ -92,7 +91,7 @@ public class TreeController extends mvc.Controller
 
 	/**
 	 * マウスカーサの形状をデフォルトに戻し、指定されたマウスイベントからマウスカーサの位置を獲得して、
-	 * インスタンス変数currentに設定する共にインスタンス変数previousをインスタンス変数currentに更新する。
+	 * インスタンス変数currentに設定すると共にインスタンス変数previousをインスタンス変数currentに更新する。
 	 */
 	public void mouseReleased(MouseEvent aMouseEvent)
 	{

@@ -95,7 +95,7 @@ public class Leaf extends JLabel implements MouseListener
     
     /**
      * 葉に親がいるかいないかを尋ねる。
-     * @return 親がいなければtrue居なければfalse
+     * @return 親がいなければtrue、居ればfalse
      */
     public boolean isRoot() 
     {
