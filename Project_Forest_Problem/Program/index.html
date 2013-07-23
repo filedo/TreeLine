@@ -1836,11 +1836,12 @@ th {
         &lt;project name=&quot;TreeLine&quot; default=&quot;all&quot; basedir=&quot;.&quot;&gt;
         
         &lt;property name=&quot;package&quot; value=&quot;tree&quot; /&gt;
-        &lt;property name=&quot;packagenames&quot; value=&quot;${package}&quot; /&gt;
+        &lt;property name=&quot;mvc&quot; value=&quot;mvc&quot; /&gt;
+        &lt;property name=&quot;packagenames&quot; value=&quot;${package},${mvc}&quot; /&gt;
         &lt;property name=&quot;destdir&quot; value=&quot;./Classes&quot; /&gt;
         &lt;property name=&quot;docdir&quot; value=&quot;./JavaDoc&quot; /&gt;
         &lt;property name=&quot;instdir&quot; value=&quot;./${ant.project.name}.app/Contents/Resources/Java&quot; /&gt;
-        &lt;property name=&quot;copyright&quot; value=&quot;Copyright 2008-2011 TreeLine. All Right Reserved.&quot; /&gt;
+        &lt;property name=&quot;copyright&quot; value=&quot;Copyright 2013 TreeLine. All Right Reserved.&quot; /&gt;
         &lt;property name=&quot;zipname&quot; value=&quot;${ant.project.name}&quot; /&gt;
         
         &lt;tstamp&gt;
@@ -1859,15 +1860,18 @@ th {
         
         &lt;target name=&quot;compile&quot; depends=&quot;prepare&quot; description=&quot;compile all sources&quot;&gt;
         &lt;javac
+        fork=&quot;true&quot;
         srcdir=&quot;${basedir}&quot;
         destdir=&quot;${destdir}&quot;
         includeAntRuntime=&quot;true&quot;
         encoding=&quot;UTF-8&quot;
         deprecation=&quot;on&quot;
         verbose=&quot;false&quot;&gt;
+        &lt;compilerarg value=&quot;-J-Dfile.encoding=UTF8&quot; /&gt;
         &lt;compilerarg value=&quot;-Xlint:unchecked&quot; /&gt;
         &lt;classpath&gt;
         &lt;pathelement location=&quot;.&quot; /&gt;
+        &lt;pathelement location=&quot;${mvc}.jar&quot; /&gt;
         &lt;/classpath&gt;
         &lt;/javac&gt;
         &lt;echo&gt;on ${date} at ${time}&lt;/echo&gt;
@@ -1878,6 +1882,7 @@ th {
         jarfile=&quot;${package}.jar&quot;
         basedir=&quot;${destdir}&quot;
         manifest=&quot;${package}.mf&quot;&gt;
+        &lt;zipfileset src=&quot;${mvc}.jar&quot; /&gt;
         &lt;/jar&gt;
         &lt;echo&gt;on ${date} at ${time}&lt;/echo&gt;
         &lt;/target&gt;
@@ -1896,7 +1901,7 @@ th {
         
         &lt;target name=&quot;treetest&quot; depends=&quot;all&quot; description=&quot;tree.txt&quot;&gt;
         &lt;exec executable=&quot;java&quot; spawn=&quot;false&quot;&gt;
-        &lt;arg line=&quot;-Xmx512m -Xss1024k -jar ${package}.jar&quot; /&gt;
+        &lt;arg line=&quot;-Dfile.encoding=UTF-8 -Xmx512m -Xss1024k -jar ${package}.jar&quot; /&gt;
         &lt;arg line=&quot;tree.txt&quot; /&gt;
         &lt;/exec&gt;
         &lt;echo&gt;on ${date} at ${time}&lt;/echo&gt;
@@ -1904,7 +1909,7 @@ th {
         
         &lt;target name=&quot;foresttest&quot; depends=&quot;all&quot; description=&quot;forest.txt&quot;&gt;
         &lt;exec executable=&quot;java&quot; spawn=&quot;false&quot;&gt;
-        &lt;arg line=&quot;-Xmx512m -Xss1024k -jar ${package}.jar&quot; /&gt;
+        &lt;arg line=&quot;-Dfile.encoding=UTF-8 -Xmx512m -Xss1024k -jar ${package}.jar&quot; /&gt;
         &lt;arg line=&quot;forest.txt&quot; /&gt;
         &lt;/exec&gt;
         &lt;echo&gt;on ${date} at ${time}&lt;/echo&gt;
@@ -1912,7 +1917,7 @@ th {
         
         &lt;target name=&quot;semilatticetest&quot; depends=&quot;all&quot; description=&quot;semilattice.txt&quot;&gt;
         &lt;exec executable=&quot;java&quot; spawn=&quot;false&quot;&gt;
-        &lt;arg line=&quot;-Xmx512m -Xss1024k -jar ${package}.jar&quot; /&gt;
+        &lt;arg line=&quot;-Dfile.encoding=UTF-8 -Xmx512m -Xss1024k -jar ${package}.jar&quot; /&gt;
         &lt;arg line=&quot;semilattice.txt&quot; /&gt;
         &lt;/exec&gt;
         &lt;echo&gt;on ${date} at ${time}&lt;/echo&gt;
@@ -1941,6 +1946,8 @@ th {
         access=&quot;private&quot;&gt;
         &lt;doctitle&gt;${doc-title}&lt;/doctitle&gt;
         &lt;bottom&gt;${copyright}&lt;/bottom&gt;
+        &lt;pathelement location=&quot;.&quot; /&gt;
+        &lt;pathelement location=&quot;${mvc}.jar&quot; /&gt;
         &lt;/javadoc&gt;
         &lt;echo&gt;on ${date} at ${time}&lt;/echo&gt;
         &lt;/target&gt;

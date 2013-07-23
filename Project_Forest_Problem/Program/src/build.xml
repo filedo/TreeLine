@@ -8,7 +8,7 @@
 	<property name="destdir" value="./Classes" />
 	<property name="docdir" value="./JavaDoc" />
 	<property name="instdir" value="./${ant.project.name}.app/Contents/Resources/Java" />
-	<property name="copyright" value="Copyright 2008-2012 TreeLine. All Right Reserved." />
+	<property name="copyright" value="Copyright 2013 TreeLine. All Right Reserved." />
 	<property name="zipname" value="${ant.project.name}" />
 	
 	<tstamp>
